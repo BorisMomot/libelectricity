@@ -24,16 +24,17 @@ void GRU::calculate(unsigned int dTime)
     computeBusFrequency();
     setBusVoltageToAll();
     setBusFrequencyToAll();
-
+    computeCurrentPconsumptions();
     auto calc = [dTime] (AbstractElModel* model){ model->calculate(dTime); };
     doSmthWithMapValues<Consumer>(consumers, calc);
+    computeCurrentPgeneration();
     doSmthWithMapValues<Source>(sources, calc);
 }
 
 void GRU::computeBusVoltage()
 {
     unsigned int AmountOfSources = 0;
-    double Utemp;
+    double Utemp = 0;
 
     auto busUcalc = [&Utemp, &AmountOfSources] (Source* source) {
         if (source->getIsConnected()) {
@@ -42,14 +43,6 @@ void GRU::computeBusVoltage()
         }
     };
     doSmthWithMapValues<Source>(sources, busUcalc);
-//    for (map<string, Source*>::iterator it=sources.begin(); it!=sources.end(); ++it)
-//    {
-//        if (it->second->getIsConnected())
-//        {
-//            Utemp += it->second->getU();
-//            AmountOfSources++;
-//        }
-//    }
     if (AmountOfSources > 0)
     {
         busU = Utemp/AmountOfSources;
@@ -63,7 +56,7 @@ void GRU::computeBusVoltage()
 void GRU::computeBusFrequency()
 {
     unsigned int AmountOfSources = 0;
-    double Ftemp;
+    double Ftemp = 0;
     auto busFcalc = [&Ftemp, &AmountOfSources] (Source* source) {
         if (source->getIsConnected()) {
             Ftemp += source->getf();
@@ -71,16 +64,6 @@ void GRU::computeBusFrequency()
         }
     };
     doSmthWithMapValues<Source>(sources, busFcalc);
-//
-//
-//    for (map<string, Source*>::iterator it=sources.begin(); it!=sources.end(); ++it)
-//    {
-//        if (it->second->getIsConnected())
-//        {
-//            Ftemp += it->second->getf();
-//            AmountOfSources++;
-//        }
-//    }
     if (AmountOfSources > 0)
     {
         busF = Ftemp/AmountOfSources;
@@ -101,21 +84,6 @@ void GRU::setBusVoltageToAll()
     };
     doSmthWithMapValues<Consumer>(consumers, USetter);
     doSmthWithMapValues<Source>(sources, USetter);
-
-//    for (map<string, Consumer*>::iterator it=consumers.begin(); it!=consumers.end(); ++it)
-//    {
-//        if (it->second->getIsConnected())
-//        {
-//            it->second->setU(busU);
-//        }
-//    }
-//    for (map<string, Source*>::iterator it=sources.begin(); it!=sources.end(); ++it)
-//    {
-//        if (it->second->getIsConnected())
-//        {
-//            it->second->setU(busU);
-//        }
-//    }
 }
 
 void GRU::setBusFrequencyToAll()
@@ -123,27 +91,11 @@ void GRU::setBusFrequencyToAll()
     auto busFCopy = busF;
     auto FSetter = [busFCopy] (AbstractElModel* model) {
         if (model->getIsConnected()){
-            model->setU(busFCopy);
+            model->setF(busFCopy);
         }
     };
     doSmthWithMapValues<Consumer>(consumers, FSetter);
     doSmthWithMapValues<Source>(sources, FSetter);
-
-
-//    for (map<string, Consumer*>::iterator it=consumers.begin(); it!=consumers.end(); ++it)
-//    {
-//        if (it->second->getIsConnected())
-//        {
-//            it->second->setF(busF);
-//        }
-//    }
-//    for (map<string, Source*>::iterator it=sources.begin(); it!=sources.end(); ++it)
-//    {
-//        if (it->second->getIsConnected())
-//        {
-//            it->second->setF(busF);
-//        }
-//    }
 }
 void GRU::computeCurrentPconsumptions()
 {
@@ -162,32 +114,6 @@ void GRU::computeCurrentPconsumptions()
         }
     };
     doSmthWithMapValues<Consumer>(consumers, consumptionComputer);
-
-//    for (map<string, Consumer*>::iterator it=consumers.begin(); it!=consumers.end(); ++it)
-//    {
-//        if (it->second->getIsConnected())
-//        {
-//            currentConsumptionP += it->second->getP();
-//            currentConsumptionQ += it->second->getQ();
-//            currentConsumptionS += it->second->getS();
-//        }
-//    }
-    computeNominalSourceP();
-    //делим мощность потребителей между источниками
-    //определим общее сопротивление всех источников
-    computeSumRInternal();
-    computeAmountOfConnetctedSources();
-
-    DivideLoadBetweenSources();
-
-    //    for (map<string, Source*>::iterator it=sources.begin(); it!=sources.end(); ++it)
-//    {
-//        if (it->second->getIsConnected())
-//        {
-//            it->second->setP((it->second->getPnominal()/PnomSources) * currentConsumptionP);
-//            it->second->setQ((it->second->getQnominal()/QnomSources) * currentConsumptionQ);
-//        }
-//    }
 }
 
 void GRU::DivideLoadBetweenSources() {
@@ -243,6 +169,13 @@ Source* GRU::getSourcePtr(const string &name)
 Consumer* GRU::getConsumerPtr(const string &name)
 {
     return (consumers.find(name)->second);
+}
+
+void GRU::computeCurrentPgeneration() {
+    computeNominalSourceP();
+    computeSumRInternal();
+    computeAmountOfConnetctedSources();
+    DivideLoadBetweenSources();
 }
 
 int GRU::computeAmountOfConnetctedSources() {

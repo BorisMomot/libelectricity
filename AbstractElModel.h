@@ -17,6 +17,7 @@ public:
     virtual inline bool setU(unsigned int voltage);
 
     virtual inline bool connectToGRU(){isConnected = true; return true;}
+    virtual inline bool disconnectToGRU(){isConnected = false; return true;}
     inline bool getIsConnected(){return isConnected;}
 
     virtual inline double getP(){return P;}

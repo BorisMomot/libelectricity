@@ -12,14 +12,10 @@ class SourceModel_Test: public testing::Test {
 public:
     SourceModel_Test();
     virtual ~SourceModel_Test();
-
-    static constexpr int Pnom={1500000};
-    static constexpr int Qnom={100000};
 protected:
     void SetUp();
     void TearDown();
 
-    Source source1{Pnom, Qnom};
 };
 
 

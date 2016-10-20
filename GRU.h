@@ -54,13 +54,14 @@ protected:
 
     int computeAmountOfConnetctedSources();
     double computeSumRInternal();
-    void computeCurrentPconsumptions();//вычисляем текущую потребляемую мощность для всех потребителей и источников
+    void computeCurrentPgeneration();//вычисляем мощность производимую всеми источниками
+    void computeCurrentPconsumptions();//вычисляем текущую потребляемую мощность для всех и источников
     void computeNominalSourceP();//вычисляем номинальную мощность подключенных к ГРУ источников
     void computeBusVoltage();//вычисляем напряжение на шинах
     void computeBusFrequency();//вычисляем частоту на шинах ГРУ
     void setBusVoltageToAll();//выстявляем общее напряжение для всего, что подключено к ГРУ
     void setBusFrequencyToAll();//выстявляем общую частоту для всего, что подключено к ГРУ
-
+    void DivideLoadBetweenSources();//делим нагрузку между источниками
 
 
     template <typename MapType, typename Functor>
@@ -69,9 +70,5 @@ protected:
             function(Item.second);
         }
     }
-
-    void DivideLoadBetweenSources();
 };
-
-
 #endif //LIBELECTRICITY_GRU_H

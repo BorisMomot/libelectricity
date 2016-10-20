@@ -22,10 +22,12 @@ TEST_F(SourceModel_Test, test1){
     //начальные значения
     int Pnom = 1500000;
     int Qnom = 100000;
+    Source source1(Pnom, Qnom);
     //проверяем как инициализируется
     EXPECT_EQ(source1.getPnominal(), Pnom);
     EXPECT_EQ(source1.getQnominal(), Qnom);
-    EXPECT_EQ(source1.getSnominal(), sqrt(Pnom*Pnom+Qnom*Qnom));
+    double Snom = sqrt((double)Pnom*(double)Pnom + (double)Qnom * (double)Qnom);
+    EXPECT_EQ(source1.getSnominal(), Snom);
     //запускаем
     EXPECT_TRUE(source1.startSource());
     EXPECT_TRUE(source1.getIsStarted());

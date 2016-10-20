@@ -9,8 +9,8 @@
 Source::Source(unsigned int Pnominal, unsigned int Qnominal, unsigned int Unominal):
         Pnom(Pnominal), Qnom(Qnominal), Unom(Unominal)
 {
-    Snom = sqrt(Pnominal*Pnominal + Qnominal*Qnominal);
-    targetU = Unominal;
+    Snom = sqrt(Pnom*Pnom + Qnom*Qnom);
+    targetU = Unom;
     internalRcalculator = new RintCalculator(Pnominal, Unominal);
 }
 
