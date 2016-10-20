@@ -11,6 +11,7 @@
 #include "AbstractModel.h"
 #include "Source.h"
 #include "Consumer.h"
+#include "LoadDivider.h"
 
 class GRU: public AbstractModel
 {
@@ -40,20 +41,36 @@ public:
     virtual inline int getCurrentConsumptionP(){return currentConsumptionP;}
     virtual inline int getCurrentConsumptionQ(){return currentConsumptionQ;}
     virtual inline int getCurrentConsumptionS(){return currentConsumptionS;}
-private:
+
+protected:
     int busU,busF; //напряжение и частота на шинах ГРУ
     int PnomSources, QnomSources, SnomSources;//номинальные мощности источников, подключенных к шинам
     int Preserv,Qreserv,Sreserv;//резерв мощности на шинах ГРУ
     int currentConsumptionP, currentConsumptionQ, currentConsumptionS;//текущая потребляемая с шин мощность
+    double SumRint={0}; //суммарное внутреннее сопротивление всех источников на шинах
+    int amountOfConnectedSources={0}; //количество источников подключенных к шинам ГРУ
     std::map<std::string, Source*> sources;
     std::map<std::string, Consumer*> consumers;
 
+    int computeAmountOfConnetctedSources();
+    double computeSumRInternal();
     void computeCurrentPconsumptions();//вычисляем текущую потребляемую мощность для всех потребителей и источников
     void computeNominalSourceP();//вычисляем номинальную мощность подключенных к ГРУ источников
     void computeBusVoltage();//вычисляем напряжение на шинах
     void computeBusFrequency();//вычисляем частоту на шинах ГРУ
     void setBusVoltageToAll();//выстявляем общее напряжение для всего, что подключено к ГРУ
     void setBusFrequencyToAll();//выстявляем общую частоту для всего, что подключено к ГРУ
+
+
+
+    template <typename MapType, typename Functor>
+    void doSmthWithMapValues(std::map<std::string, MapType *> _map, Functor function){
+        for (auto&& Item : _map) {
+            function(Item.second);
+        }
+    }
+
+    void DivideLoadBetweenSources();
 };
 
 
