@@ -52,17 +52,17 @@ protected:
     std::map<std::string, Source*> sources;
     std::map<std::string, Consumer*> consumers;
 
+    void computeSourcesUandF(unsigned int dTime);//вычисляет напряжение и частоту на источниках, до выравнивания в ГРУ
+    void computeBusVoltage();//вычисляем напряжение на шинах
+    void setBusVoltageToAll();//выстявляем общее напряжение для всего, что подключено к ГРУ
+    void computeBusFrequency();//вычисляем частоту на шинах ГРУ
+    void setBusFrequencyToAll();//выстявляем общую частоту для всего, что подключено к ГРУ
+    void computeCurrentPconsumptions();//вычисляем текущую потребляемую мощность для всех и источников
+    void computeCurrentPgeneration();//вычисляем мощность производимую всеми источниками
     int computeAmountOfConnetctedSources();
     double computeSumRInternal();
-    void computeCurrentPgeneration();//вычисляем мощность производимую всеми источниками
-    void computeCurrentPconsumptions();//вычисляем текущую потребляемую мощность для всех и источников
     void computeNominalSourceP();//вычисляем номинальную мощность подключенных к ГРУ источников
-    void computeBusVoltage();//вычисляем напряжение на шинах
-    void computeBusFrequency();//вычисляем частоту на шинах ГРУ
-    void setBusVoltageToAll();//выстявляем общее напряжение для всего, что подключено к ГРУ
-    void setBusFrequencyToAll();//выстявляем общую частоту для всего, что подключено к ГРУ
     void DivideLoadBetweenSources();//делим нагрузку между источниками
-
 
     template <typename MapType, typename Functor>
     void doSmthWithMapValues(std::map<std::string, MapType *> _map, Functor function){

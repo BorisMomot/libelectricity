@@ -23,6 +23,9 @@ public:
     virtual inline bool getIsStarted(){return isStarted;}
     virtual bool stopSource();
 
+    virtual void calculateSourceU(unsigned int dTime);
+    virtual void calculateSourceF(unsigned int dTime);
+
     virtual bool setF(unsigned int frequency) override;
     virtual bool setU(unsigned int voltage) override;
     virtual inline bool setTargetU(unsigned int Utarget){targetU = Utarget; return true;}

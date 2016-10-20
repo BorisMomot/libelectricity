@@ -20,6 +20,7 @@ void GRU::aftercalculation(unsigned int dTime)
 }
 void GRU::calculate(unsigned int dTime)
 {
+    computeSourcesUandF(dTime);
     computeBusVoltage();
     computeBusFrequency();
     setBusVoltageToAll();
@@ -200,4 +201,9 @@ double GRU::computeSumRInternal() {
     };
     doSmthWithMapValues<Source>(sources, RintSummator);
     return SumRint;
+}
+
+void GRU::computeSourcesUandF(unsigned int dTime) {
+    auto compUandF = [dTime] (Source* source) {source->calculateSourceF(dTime);};
+    doSmthWithMapValues(sources, compUandF);
 }

@@ -138,3 +138,11 @@ bool Source::setRCalculator(RintCalculator *Rcalc) {
         return false;
     }
 }
+
+void Source::calculateSourceU(unsigned int dTime) {
+    U = Ua = Ub = Uc = targetU;
+}
+
+void Source::calculateSourceF(unsigned int dTime) {
+    U = Ua = Ub = Uc = targetU;
+}

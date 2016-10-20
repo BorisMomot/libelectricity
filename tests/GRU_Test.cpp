@@ -24,7 +24,7 @@ TEST_F(GRU_Test, test1) {
     gru1.addSource("Gen2", &gen1);
     gru1.addConsumer("SomeConsumer", &consumer1);
     gen1.startSource();
-    gen1.setTargetU(220);
+    gen1.setTargetU(400);
     gen1.setTargetF(50);
     gen1.setU(400);
     gen1.setF(50);
@@ -69,7 +69,7 @@ TEST_F(GRU_Test, test2) {
     gru1.addSource("Gen3", &gen1);
     gru1.addConsumer("SomeConsumer", &consumer1);
     gen1.startSource();
-    gen1.setTargetU(220);
+    gen1.setTargetU(400);
     gen1.setTargetF(50);
     gen1.setU(400);
     gen1.setF(50);
