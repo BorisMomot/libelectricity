@@ -17,6 +17,14 @@ void LoadDivider_Test::TearDown() {
 }
 
 //-------------------------------------------------
-TEST_F(LoadDivider_Test, test1) {
-    EXPECT_DOUBLE_EQ(LoadDivider::calculateSourceLoad(10000, 0.9, 0.105, 2), 4);
+TEST_F(LoadDivider_Test, testTwoSourcees) {
+    int Ptotal = 10000, numberOfSources = 2;
+    double Rsum = 0.9, R1 = 0.105;
+    EXPECT_DOUBLE_EQ(LoadDivider::calculateSourceLoad(Ptotal, Rsum, R1, numberOfSources), (double)(Rsum-R1)/Rsum/(numberOfSources-1)*Ptotal);
+}
+
+TEST_F(LoadDivider_Test, testThreeSourcees) {
+    int Ptotal = 10000, numberOfSources = 3;
+    double Rsum = 0.9, R1 = 0.105;
+    EXPECT_DOUBLE_EQ(LoadDivider::calculateSourceLoad(Ptotal, Rsum, R1, numberOfSources), (double)(Rsum-R1)/Rsum/(numberOfSources-1)*Ptotal);
 }
