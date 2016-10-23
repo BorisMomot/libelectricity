@@ -6,20 +6,19 @@
 
 using namespace std;
 
-void GRU::precalculate(unsigned int dTime)
-{
+void GRU::precalculate(unsigned int dTime) {
     auto precalc = [dTime] (AbstractElModel* model){ model->precalculate(dTime); };
     doSmthWithMapValues<Consumer>(consumers, precalc);
     doSmthWithMapValues<Source>(sources, precalc);
 }
-void GRU::aftercalculation(unsigned int dTime)
-{
+
+void GRU::aftercalculation(unsigned int dTime) {
     auto aftercalc = [dTime] (AbstractElModel* model){ model->aftercalculation(dTime); };
     doSmthWithMapValues<Consumer>(consumers, aftercalc);
     doSmthWithMapValues<Source>(sources, aftercalc);
 }
-void GRU::calculate(unsigned int dTime)
-{
+
+void GRU::calculate(unsigned int dTime) {
     computeSourcesUandF(dTime);
     computeBusVoltage();
     computeBusFrequency();
@@ -153,48 +152,6 @@ Consumer* GRU::getConsumerPtr(const string &name) {
 }
 
 void GRU::computeCurrentPgeneration() {
-    ActiveLoadDivider::DivideActiveLoadBetweenSources(sources, currentConsumptionP);
-//    computeSumRInternal();
-//    computeAmountOfConnetctedSources();
-//    DivideLoadBetweenSources();
+    AllLoadDivider::DivideActiveLoadBetweenSources(sources, currentConsumptionP);
+    AllLoadDivider::DivideReactiveLoadBetweenSources(sources, currentConsumptionQ);
 }
-
-//
-//double GRU::computeSumRInternal() {
-//    SumRint = 0;
-//    auto& SumRintCopy = SumRint;
-//    auto RintSummator = [&SumRintCopy] (Source* source) {
-//        if (source->getIsConnected()) {
-//            SumRintCopy += source->getRinternal();
-//        }
-//    };
-//    doSmthWithMapValues<Source>(sources, RintSummator);
-//    return SumRint;
-//}
-//
-//int GRU::computeAmountOfConnetctedSources() {
-//    amountOfConnectedSources = 0;
-//    auto& amountOfConnectedSourcesCopy = amountOfConnectedSources;
-//    auto calcAmountOfInclSources = [&amountOfConnectedSourcesCopy] (Source* source) {
-//        if (source->getIsConnected()) {
-//            amountOfConnectedSourcesCopy++;
-//        }
-//    };
-//    doSmthWithMapValues<Source>(sources, calcAmountOfInclSources);
-//    return amountOfConnectedSources;
-//}
-//void GRU::DivideLoadBetweenSources() {
-//    auto& currentConsumptionPCopy = currentConsumptionP;
-//    auto& SumRintCopy = SumRint;
-//    auto& amountOfConnectedSourcesCopy = amountOfConnectedSources;
-//    auto& currentConsumptionQCopy = currentConsumptionQ;
-//
-//    auto loadDivider = [&currentConsumptionPCopy, &SumRintCopy, &amountOfConnectedSourcesCopy, &currentConsumptionQCopy] (Source* source) {
-//        source->setP(LoadDivider::calculateSourceLoad(currentConsumptionPCopy, SumRintCopy, source->getRinternal(),
-//                                                      amountOfConnectedSourcesCopy) );
-//        source->setQ(LoadDivider::calculateSourceLoad(currentConsumptionPCopy, SumRintCopy, source->getRinternal(),
-//                                                      amountOfConnectedSourcesCopy) / currentConsumptionPCopy *
-//                     currentConsumptionQCopy);
-//    };
-//    doSmthWithMapValues(sources, loadDivider);
-//}

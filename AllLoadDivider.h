@@ -8,22 +8,16 @@
 #include <string>
 #include <map>
 #include "Source.h"
+#include "GRU_functions.h"
 
-template <typename MapType, typename Functor>
-void doSmthWithMapValues(std::map<std::string, MapType *> _map, Functor function){
-    for (auto&& Item : _map) {
-        function(Item.second);
-    }
-}
 
-class ActiveLoadDivider {
+class AllLoadDivider {
 public:
-    //главная функция для деления нагрузки
+    //функции для деления нагрузки
     static void DivideActiveLoadBetweenSources(std::map<std::string, Source*> &sources, double PTotalLoad);
+    static void DivideReactiveLoadBetweenSources(std::map<std::string, Source*> &sources, double QTotalLoad);
 
-    //функция для определения суммарной номинальной мощности всех источников подключенных к ГРУ
-//    static double computePnom(std::map<std::string, Source*> &sources);
-
+private:
     //функция вычисляющая суммарное внутреннее сопротивелние всех источников
     static double computeRinSourceSum(std::map<std::string, Source *> &sources);
 
@@ -31,9 +25,10 @@ public:
     static int computeAmountOfConnectedSources(std::map<std::string, Source*> &sources);
 
     //функция выставляющая потребление для каждого источника
-    static void divideBaseOnRinternal(std::map<std::string, Source*> &sources, double PTotalLoad, double RintSum, int AmountOFConnectedSources);
+    static void divideActivePowerBaseOnRinternal(std::map<std::string, Source *> &sources, double PTotalLoad,
+                                                 double RintSum, int AmountOFConnectedSources);
+    static void divideReactivePowerBaseOnRinternal(std::map<std::string, Source *> &sources, double QTotalLoad,
+                                                 double RintSum, int AmountOFConnectedSources);
 
 };
-
-
 #endif //LIBELECTRICITY_ACTIVELOADDIVIDER_H

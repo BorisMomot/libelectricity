@@ -11,8 +11,8 @@
 #include "AbstractModel.h"
 #include "Source.h"
 #include "Consumer.h"
-//#include "LoadDivider.h"
-#include "ActiveLoadDivider.h"
+#include "AllLoadDivider.h"
+#include "GRU_functions.h"
 
 
 class GRU: public AbstractModel
@@ -62,15 +62,6 @@ protected:
     void computeCurrentPconsumptions();//вычисляем текущую потребляемую мощность для всех и источников
     void computeCurrentPgeneration();//вычисляем мощность производимую всеми источниками
     void computeNominalSourceP();//вычисляем номинальную мощность подключенных к ГРУ источников
-//    int computeAmountOfConnetctedSources();
-//    double computeSumRInternal();
-//    void DivideLoadBetweenSources();//делим нагрузку между источниками
-
-    template <typename MapType, typename Functor>
-    void doSmthWithMapValues(std::map<std::string, MapType *> _map, Functor function){
-        for (auto&& Item : _map) {
-            function(Item.second);
-        }
-    }
+    void computePreserv();//
 };
 #endif //LIBELECTRICITY_GRU_H
