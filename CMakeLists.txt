@@ -6,7 +6,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(SOURCE_FILES_LIBELECTRICITY
         AbstractModel.cpp AbstractModel.h AbstractElModel.cpp AbstractElModel.h Consumer.cpp Consumer.h Source.cpp Source.h GRU.cpp GRU.h
         RintCalculator.cpp RintCalculator.h
-        LoadDivider.cpp LoadDivider.h)
+        LoadDivider.cpp LoadDivider.h
+        ActiveLoadDivider.cpp ActiveLoadDivider.h)
 
 add_library(libelectricity STATIC ${SOURCE_FILES_LIBELECTRICITY})
 

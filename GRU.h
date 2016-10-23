@@ -11,7 +11,9 @@
 #include "AbstractModel.h"
 #include "Source.h"
 #include "Consumer.h"
-#include "LoadDivider.h"
+//#include "LoadDivider.h"
+#include "ActiveLoadDivider.h"
+
 
 class GRU: public AbstractModel
 {
@@ -59,10 +61,10 @@ protected:
     void setBusFrequencyToAll();//выстявляем общую частоту для всего, что подключено к ГРУ
     void computeCurrentPconsumptions();//вычисляем текущую потребляемую мощность для всех и источников
     void computeCurrentPgeneration();//вычисляем мощность производимую всеми источниками
-    int computeAmountOfConnetctedSources();
-    double computeSumRInternal();
     void computeNominalSourceP();//вычисляем номинальную мощность подключенных к ГРУ источников
-    void DivideLoadBetweenSources();//делим нагрузку между источниками
+//    int computeAmountOfConnetctedSources();
+//    double computeSumRInternal();
+//    void DivideLoadBetweenSources();//делим нагрузку между источниками
 
     template <typename MapType, typename Functor>
     void doSmthWithMapValues(std::map<std::string, MapType *> _map, Functor function){
