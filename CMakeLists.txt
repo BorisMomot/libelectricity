@@ -12,7 +12,7 @@ set(SOURCE_FILES_LIBELECTRICITY
 
 add_library(libelectricity STATIC ${SOURCE_FILES_LIBELECTRICITY})
 
-#add_subdirectory(googletest)
+add_subdirectory(googletest)
 add_subdirectory(tests)
 
 set(SOURCE_FILES main.cpp)
