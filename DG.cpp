@@ -2,7 +2,7 @@
 #include "DG.h"
 #include <math.h>
 
-DG::DG(unsigned int Pnominal, unsigned int Qnominal, unsigned int Unominal) : Source(Pnominal, Qnominal, Unominal)
+DG::DG(unsigned int Pnominal, unsigned int Qnominal, unsigned int Unominal) : Source(Pnominal, Qnominal, Unominal), pi(0, 1)
 {
     computeJ();
 }
@@ -24,26 +24,27 @@ void DG::computeJ() {
 
 void DG::computeFuelFlow(unsigned int dTime) {
     FuelFlow_ps = FuelFlow;
-    //защищаемся от переполнения
-    if (fabs(integrMismatch) < 1e300){
-        if ((fabs(f) < 1e200) && fabs(targetF) < 1e200) {
-            integrMismatch += (targetF - f);
-        }
-    }
-    else {
-        if (!signbit(integrMismatch)) {
-            integrMismatch = 1e300;
-        }
-        else {
-            integrMismatch = -1e300;
-        }
-    }
-    if (Ti != 0) {
-        FuelFlow = Kp * (targetF - f) + 1/Ti * Kp * dTime * integrMismatch;
-    }
-    else {
-        FuelFlow = -1;
-    }
+    FuelFlow = pi.computeOutput(dTime, (targetF - f));
+//    //защищаемся от переполнения
+//    if (fabs(integrMismatch) < 1e300){
+//        if ((fabs(f) < 1e200) && fabs(targetF) < 1e200) {
+//            integrMismatch += (targetF - f);
+//        }
+//    }
+//    else {
+//        if (!signbit(integrMismatch)) {
+//            integrMismatch = 1e300;
+//        }
+//        else {
+//            integrMismatch = -1e300;
+//        }
+//    }
+//    if (Ti != 0) {
+//        FuelFlow = Kp * (targetF - f) + 1/Ti * Kp * dTime * integrMismatch;
+//    }
+//    else {
+//        FuelFlow = -1;
+//    }
 }
 
 void DG::computeMdv(unsigned int dTime) {
