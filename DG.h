@@ -6,6 +6,7 @@
 #define LIBELECTRICITY_DG_H
 
 #include "Source.h"
+#include "PID.h"
 
 class DG: public Source {
 public:
@@ -29,6 +30,7 @@ protected:
 	void computeMnagr(unsigned int dTime); //расчет текущего момента нагрузки
 	void computeRPM(unsigned int dTime); //расчет текущей скорости вращения ДГ
 
+	PID pi;
 	double J = {0}; //момент инерции ДГ
 	double FuelFlow = {0}; //подача топлива
 	double FuelFlow_ps = {0}; //подача топлива на предыдущем шаге

@@ -8,7 +8,7 @@ set(SOURCE_FILES_LIBELECTRICITY
         RintCalculator.cpp RintCalculator.h
         LoadDivider.cpp LoadDivider.h
         AllLoadDivider.cpp AllLoadDivider.h
-		DG.cpp DG.h)
+		DG.cpp DG.h PID.cc PID.h )
 
 add_library(libelectricity STATIC ${SOURCE_FILES_LIBELECTRICITY})
 
