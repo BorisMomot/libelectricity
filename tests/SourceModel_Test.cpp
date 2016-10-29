@@ -26,6 +26,8 @@ TEST_F(SourceModel_Test, test1){
     //проверяем как инициализируется
     EXPECT_EQ(source1.getPnominal(), Pnom);
     EXPECT_EQ(source1.getQnominal(), Qnom);
+    EXPECT_DOUBLE_EQ(source1.getTargetU(), 400);
+    EXPECT_DOUBLE_EQ(source1.getTargetF(), 50);
     double Snom = sqrt((double)Pnom*(double)Pnom + (double)Qnom * (double)Qnom);
     EXPECT_EQ(source1.getSnominal(), Snom);
     //запускаем
