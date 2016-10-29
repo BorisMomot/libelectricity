@@ -32,7 +32,17 @@ void DG::computeMdv(unsigned int dTime) {
 }
 
 void DG::computeMnagr(unsigned int dTime) {
-    Mnagr = P / (f*2);
+    if (P!=0) {
+        if (f!=0){
+            Mnagr = P / (f*2); //формула по которой считаем при корректных значениях
+        }
+        else {
+            Mnagr = 0;
+        }
+    }
+    else {
+        Mnagr = 0;
+    }
 }
 
 void DG::computeRPM(unsigned int dTime) {
