@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Consumer.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AbstractElModel.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/tests.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/DG_Test.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/AbstractElModel_Test.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/SourceModel_Test.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/PI_Test.cpp" isTestSource="false" />
@@ -21,6 +22,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests/LoadDivider_Test.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/PI_Test.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/GRU_Test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/DG_Test.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/SourceModel_Test.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/AbstractElModel_Test.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AbstractElModel.h" isTestSource="false" />
