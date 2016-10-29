@@ -53,7 +53,7 @@ public:
 protected:
     double P,Q,S;
     double Pa,Pb,Pc,Qa,Qb,Qc,Sa,Sb,Sc;
-    double f,I,U;
+    double f={0},I,U;
     double Ia,Ib,Ic,Ua,Ub,Uc;
     bool isConnected; //подключен ли потребитель к шинам ГРУ
 };
