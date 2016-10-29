@@ -21,8 +21,10 @@ public:
 	double getMnagr() const { return Mnagr;	}
 	double getRPM() const {	return RPM; }
 
-	void setKp(double Kp) {	DG::Kp = Kp; }
-	void setTi(double Ti) { DG::Ti = Ti; }
+	void setKp(double Kp) {	pi.setKp(Kp);}
+	void setTi(double Ti) { pi.setTi(Ti);}
+    double getKp(){ return pi.getKp();}
+    double getTi(){ return pi.getTi();}
 protected:
 	inline void computeJ(); //
 	void computeFuelFlow(unsigned int dTime); //расчет уровня топлива подаваемого в дизель (ПИД регулятор)
@@ -39,11 +41,6 @@ protected:
 	double Mnagr = {0}; //момент нагрузки от генератора
 	double RPM = {0}; //скорость вращения ДГ
 	double RPM_ps = {0}; //скорость вращения ДГ на предыдущем шаге
-
-	//Настройки для ПИ-регулятора
-	double Kp = {0}; //коэффициент усиления
-	double Ti = {1}; //коэффициент интегрирования
-	double integrMismatch = {0}; //хранит значение интегратора
 };
 
 
