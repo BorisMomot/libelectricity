@@ -8,14 +8,19 @@
 Consumer::Consumer(unsigned int Pnominal, unsigned int Qnominal):
         Pnom(Pnominal), Qnom(Qnominal)
 {
-    Snom = sqrt (Pnominal* Pnominal + Qnominal*Qnominal);
+    Snom = sqrt (Pnom* Pnom + Qnom*Qnom);
 }
 
 void Consumer::calculate(unsigned int dTime)
 {
-    P = Pnom;
-    Q = Qnom;
-    S = Snom;
-    calculatePowers();
-    calculateCurrents();
+    if (isConnected) {
+        P = Pnom;
+        Q = Qnom;
+        S = Snom;
+        calculatePowers();
+        calculateCurrents();
+    }
+    else {
+        resetParameterToZero();
+    }
 }

@@ -94,3 +94,7 @@ void AbstractElModel::calculateCurrents()
 }
 
 AbstractElModel::~AbstractElModel(){}
+
+void AbstractElModel::resetParameterToZero() {
+    P = Q = S = Pa = Pb = Pc = Qa = Qb = Qc = Sa = Sb = Sc = I = Ia = Ib = Ic = 0;
+}

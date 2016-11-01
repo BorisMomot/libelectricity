@@ -6,10 +6,13 @@
       <sourceFolder url="file://$MODULE_DIR$/RintCalculator.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GRU.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/LoadDivider.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SimpleDrive.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/PID.cc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Consumer.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AbstractElModel.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/SimpleDrive_Test.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/tests.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/SimpleDrive_Test.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/DG_Test.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/AbstractElModel_Test.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/SourceModel_Test.h" isTestSource="false" />
@@ -27,6 +30,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests/AbstractElModel_Test.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AbstractElModel.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Consumer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SimpleDrive.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/RintCalculator.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DG.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/PID.h" isTestSource="false" />

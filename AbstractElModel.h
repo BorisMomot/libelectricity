@@ -51,6 +51,7 @@ public:
 
     virtual ~AbstractElModel() = 0;
 protected:
+    virtual void resetParameterToZero();
     double P,Q,S;
     double Pa,Pb,Pc,Qa,Qb,Qc,Sa,Sb,Sc;
     double f={0},I,U;
