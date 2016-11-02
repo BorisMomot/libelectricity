@@ -28,8 +28,8 @@ void GRU::calculate(unsigned int dTime) {
     computeNominalSourceP();
     auto calc = [dTime] (AbstractElModel* model){ model->calculate(dTime); };
     doSmthWithMapValues<Consumer>(consumers, calc);
-    computeCurrentPgeneration();
     doSmthWithMapValues<Source>(sources, calc);
+    computeCurrentPgeneration();
 }
 
 void GRU::computeSourcesUandF(unsigned int dTime) {

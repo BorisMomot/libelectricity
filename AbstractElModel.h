@@ -52,11 +52,11 @@ public:
     virtual ~AbstractElModel() = 0;
 protected:
     virtual void resetParameterToZero();
-    double P,Q,S;
+    double P={0},Q={0},S={0};
     double Pa,Pb,Pc,Qa,Qb,Qc,Sa,Sb,Sc;
-    double f={0},I,U;
+    double f={0},I={0},U={0};
     double Ia,Ib,Ic,Ua,Ub,Uc;
-    bool isConnected; //подключен ли потребитель к шинам ГРУ
+    bool isConnected={false}; //подключен ли потребитель к шинам ГРУ
 };
 
 
