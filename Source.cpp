@@ -6,8 +6,8 @@
 #include <math.h>
 
 
-Source::Source(unsigned int Pnominal, unsigned int Qnominal, unsigned int Unominal):
-        Pnom(Pnominal), Qnom(Qnominal), Unom(Unominal)
+Source::Source(double Pnominal, double Qnominal, double Unominal):
+        Pnom(fabs(Pnominal)), Qnom(fabs(Qnominal)), Unom(fabs(Unominal))
 {
     Snom = sqrt(Pnom*Pnom + Qnom*Qnom);
     targetU = Unom;

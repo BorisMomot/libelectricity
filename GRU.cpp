@@ -30,6 +30,7 @@ void GRU::calculate(unsigned int dTime) {
     doSmthWithMapValues<Consumer>(consumers, calc);
     doSmthWithMapValues<Source>(sources, calc);
     computeCurrentPgeneration();
+    computePowerReserv();
 }
 
 void GRU::computeSourcesUandF(unsigned int dTime) {
@@ -154,4 +155,10 @@ Consumer* GRU::getConsumerPtr(const string &name) {
 void GRU::computeCurrentPgeneration() {
     AllLoadDivider::DivideActiveLoadBetweenSources(sources, currentConsumptionP);
     AllLoadDivider::DivideReactiveLoadBetweenSources(sources, currentConsumptionQ);
+}
+
+void GRU::computePowerReserv() {
+    Preserv = PnomSources - currentConsumptionP;
+    Qreserv = QnomSources - currentConsumptionQ;
+    Sreserv = SnomSources - currentConsumptionS;
 }

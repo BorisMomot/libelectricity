@@ -12,7 +12,7 @@
 class Source: public AbstractElModel
 {
 public:
-    Source(unsigned int Pnominal, unsigned int Qnominal, unsigned int Unominal=400);
+    Source(double Pnominal, double Qnominal, double Unominal = 400);
     virtual ~Source();
 
     virtual void precalculate(unsigned int dTime) override {}

@@ -34,21 +34,21 @@ public:
     virtual inline int getCurrentU(){return busU;}
     virtual inline int getCurrentF(){return busF;}
 
-    virtual inline int getPnomSources(){return PnomSources;}
-    virtual inline int getQnomSources(){return QnomSources;}
-    virtual inline int getSnomSources(){return SnomSources;}
-    virtual inline int getPreserv(){return Preserv;}
-    virtual inline int getQreserv(){return Qreserv;}
-    virtual inline int getSreserv(){return Sreserv;}
-    virtual inline int getCurrentConsumptionP(){return currentConsumptionP;}
-    virtual inline int getCurrentConsumptionQ(){return currentConsumptionQ;}
-    virtual inline int getCurrentConsumptionS(){return currentConsumptionS;}
+    virtual inline double getPnomSources(){return PnomSources;}
+    virtual inline double getQnomSources(){return QnomSources;}
+    virtual inline double getSnomSources(){return SnomSources;}
+    virtual inline double getPreserv(){return Preserv;}
+    virtual inline double getQreserv(){return Qreserv;}
+    virtual inline double getSreserv(){return Sreserv;}
+    virtual inline double getCurrentConsumptionP(){return currentConsumptionP;}
+    virtual inline double getCurrentConsumptionQ(){return currentConsumptionQ;}
+    virtual inline double getCurrentConsumptionS(){return currentConsumptionS;}
 
 protected:
-    int busU,busF; //напряжение и частота на шинах ГРУ
-    int PnomSources, QnomSources, SnomSources;//номинальные мощности источников, подключенных к шинам
-    int Preserv,Qreserv,Sreserv;//резерв мощности на шинах ГРУ
-    int currentConsumptionP, currentConsumptionQ, currentConsumptionS;//текущая потребляемая с шин мощность
+    int busU={0},busF={0}; //напряжение и частота на шинах ГРУ
+    double PnomSources={0}, QnomSources={0}, SnomSources={0};//номинальные мощности источников, подключенных к шинам
+    double Preserv={0},Qreserv={0},Sreserv={0};//резерв мощности на шинах ГРУ
+    double currentConsumptionP={0}, currentConsumptionQ={0}, currentConsumptionS={0};//текущая потребляемая с шин мощность
     double SumRint={0}; //суммарное внутреннее сопротивление всех источников на шинах
     int amountOfConnectedSources={0}; //количество источников подключенных к шинам ГРУ
     std::map<std::string, Source*> sources;
@@ -62,6 +62,6 @@ protected:
     void computeCurrentPconsumptions();//вычисляем текущую потребляемую мощность для всех и источников
     void computeCurrentPgeneration();//вычисляем мощность производимую всеми источниками
     void computeNominalSourceP();//вычисляем номинальную мощность подключенных к ГРУ источников
-    void computePreserv();//
+    void computePowerReserv();//расчитываем резервы мощностей на шинах ГРУ
 };
 #endif //LIBELECTRICITY_GRU_H
