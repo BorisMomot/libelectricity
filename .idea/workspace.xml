@@ -17,21 +17,8 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f50b9aa4-c180-4a7e-b8e5-6a679913c50c" name="Default" comment="Добавил в класс абстрактная эл. модель напряжение и частоту на шинах">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Q.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Q.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Q_withDisc.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Q_withDisc.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Q_Test.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Q_Test.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libelectricity.iml" afterPath="$PROJECT_DIR$/.idea/libelectricity.iml" />
+    <list default="true" id="f50b9aa4-c180-4a7e-b8e5-6a679913c50c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbstractElModel.h" afterPath="$PROJECT_DIR$/AbstractElModel.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Consumer.cpp" afterPath="$PROJECT_DIR$/Consumer.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Consumer.h" afterPath="$PROJECT_DIR$/Consumer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/AbstractElModel_Test.cpp" afterPath="$PROJECT_DIR$/tests/AbstractElModel_Test.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/CMakeLists.txt" afterPath="$PROJECT_DIR$/tests/CMakeLists.txt" />
     </list>
     <ignored path="libelectricity.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -555,7 +542,7 @@
       <workItem from="1477731411911" duration="7116000" />
       <workItem from="1478026089051" duration="5208000" />
       <workItem from="1478113395073" duration="6293000" />
-      <workItem from="1478246477338" duration="6629000" />
+      <workItem from="1478246477338" duration="6779000" />
     </task>
     <task id="LOCAL-00001" summary="Написал тесты для распределения нагрузки и вычисления внутреннего сопротивления.">
       <created>1476912928133</created>
@@ -606,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478118672459</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Добавил в класс абстрактная эл. модель напряжение и частоту на шинах&#10;Добавил проверку в тесты&#10;Написал класс для простого выключателя&#10;Написал тесты к нему&#10;Написал класс для выключателя с минимальным расцепителем&#10;Написал тесты к нему">
+      <created>1478256494423</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1478256494423</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -642,7 +636,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100265000" />
+    <option name="totallyTimeSpent" value="100415000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -663,7 +657,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986959" sideWeight="0.49425286" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24934794" sideWeight="0.507837" order="0" side_tool="true" content_ui="tabs" />
@@ -695,7 +689,8 @@
     <MESSAGE value="Наполнил ДГ формулами" />
     <MESSAGE value="Написал простой имитатор привода и тесты к нему" />
     <MESSAGE value="Написал несколько тестов к классу ГРУ. Исправил мелкие ошибки инициализации и резервов мощности" />
-    <option name="LAST_COMMIT_MESSAGE" value="Написал несколько тестов к классу ГРУ. Исправил мелкие ошибки инициализации и резервов мощности" />
+    <MESSAGE value="Добавил в класс абстрактная эл. модель напряжение и частоту на шинах&#10;Добавил проверку в тесты&#10;Написал класс для простого выключателя&#10;Написал тесты к нему&#10;Написал класс для выключателя с минимальным расцепителем&#10;Написал тесты к нему" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил в класс абстрактная эл. модель напряжение и частоту на шинах&#10;Добавил проверку в тесты&#10;Написал класс для простого выключателя&#10;Написал тесты к нему&#10;Написал класс для выключателя с минимальным расцепителем&#10;Написал тесты к нему" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
