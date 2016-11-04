@@ -59,8 +59,8 @@ protected:
     void setBusVoltageToAll();//выстявляем общее напряжение для всего, что подключено к ГРУ
     void computeBusFrequency();//вычисляем частоту на шинах ГРУ
     void setBusFrequencyToAll();//выстявляем общую частоту для всего, что подключено к ГРУ
-    void computeCurrentPconsumptions();//вычисляем текущую потребляемую мощность для всех и источников
-    void computeCurrentPgeneration();//вычисляем мощность производимую всеми источниками
+    void computeCurrentGRUPconsumptions();//вычисляем текущую потребляемую мощность на ГРУ
+    void devideConsumptedPowerBetweenGenerators(unsigned int dTime);//вычисляем мощность производимую всеми источниками
     void computeNominalSourceP();//вычисляем номинальную мощность подключенных к ГРУ источников
     void computePowerReserv();//расчитываем резервы мощностей на шинах ГРУ
 };

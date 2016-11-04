@@ -42,6 +42,7 @@ public:
     virtual inline double getUnominal(){return Unom;}
     virtual inline double getTargetF(){return targetF;}
     virtual inline double getTargetU(){return targetU;}
+    virtual inline double computeRinternal(unsigned int dTime);
     virtual inline double getRinternal(){return Rinternal;}
 
     bool setRCalculator(RintCalculator* Rcalc);
@@ -53,8 +54,6 @@ protected:
     bool isOverLoaded = {false};
     bool isStarted;
     RintCalculator *internalRcalculator;//ссылка на объект, который будет рассчитывать внутреннее сопротивление источника
-
-
 };
 
 

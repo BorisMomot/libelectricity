@@ -68,7 +68,6 @@ TEST_F(GRU_Test, checkNetworkParametersANDTwoSourcesDividing) {
     EXPECT_TRUE(gen1.getIsConnected());
     EXPECT_TRUE(consumer1.getIsConnected());
     gru1.calculate(1);
-    gru1.calculate(1);
     //проверка, что частота на шинах выставилась правильно
     EXPECT_DOUBLE_EQ(gru1.getCurrentF(), (double)f);
     //проверка, что напряжение на шинах выставилось верно
@@ -82,6 +81,11 @@ TEST_F(GRU_Test, checkNetworkParametersANDTwoSourcesDividing) {
     EXPECT_DOUBLE_EQ(consumer1.getUa(), (double)U);
     EXPECT_DOUBLE_EQ(consumer1.getUb(), (double)U);
     EXPECT_DOUBLE_EQ(consumer1.getUc(), (double)U);
+    //проверяем что на все потребители выставилось правильное напряжение и частота сети
+    EXPECT_DOUBLE_EQ(gen1.getUbus(), (double)U);
+    EXPECT_DOUBLE_EQ(gen1.getFbus(), (double)f);
+    EXPECT_DOUBLE_EQ(consumer1.getUbus(), (double)U);
+    EXPECT_DOUBLE_EQ(consumer1.getFbus(), (double)f);
     //проверка, что частота на всех потребителях выставилось нормально
     EXPECT_DOUBLE_EQ(gen1.getf(), (double)f);
     EXPECT_DOUBLE_EQ(consumer1.getf(), (double)f);
@@ -113,7 +117,6 @@ TEST_F(GRU_Test, checkTwoSourcesDividing) {
     EXPECT_TRUE(gen1.getIsConnected());
     EXPECT_TRUE(consumer1.getIsConnected());
     gru1.calculate(1);
-    gru1.calculate(1);
     //проверка распределения мощности между источниками
     EXPECT_DOUBLE_EQ(gen1.getP(), (double)750000);
 }
@@ -140,7 +143,6 @@ TEST_F(GRU_Test, checkThreeSourcesDividing) {
     gen1.setF(f);
     gen1.connectToGRU();
     consumer1.connectToGRU();
-    gru1.calculate(1);
     gru1.calculate(1);
     //проверка распределения мощности между источниками
     EXPECT_DOUBLE_EQ(gen1.getP(), (double)500000);
@@ -181,7 +183,6 @@ TEST_F(GRU_Test, checkLoadDividingAfterDisconnectionBetweenDifferentSources) {
 
     gen2.disconnectToGRU();
     gru1.calculate(1);
-    gru1.calculate(1);
     EXPECT_DOUBLE_EQ(gen1.getP(), (double)PnomConsumption);
     EXPECT_DOUBLE_EQ(gen2.getP(), (double)0);
 }
@@ -208,7 +209,6 @@ TEST_F(GRU_Test, CheckPowerReserws) {
     //проверка что источник и потребитель подключились
     EXPECT_TRUE(gen1.getIsConnected());
     EXPECT_TRUE(consumer1.getIsConnected());
-    gru1.calculate(1);
     gru1.calculate(1);
     EXPECT_DOUBLE_EQ(gru1.getCurrentConsumptionP(), PnomConsumption);
     EXPECT_DOUBLE_EQ(gru1.getCurrentConsumptionQ(), 0);

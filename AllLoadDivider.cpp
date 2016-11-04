@@ -5,23 +5,23 @@
 #include "AllLoadDivider.h"
 using namespace std;
 
-void AllLoadDivider::DivideActiveLoadBetweenSources(std::map<std::string, Source*> &sources, double PTotalLoad) {
-    double RintSum = computeRinSourceSum(sources);
-    double AmountOFConnectedSources = computeAmountOfConnectedSources(sources);
+void AllLoadDivider::DivideActiveLoadBetweenSources(std::map<std::string, Source*> &sources, double PTotalLoad, unsigned int dTime) {
+    double RintSum = computeRinSourceSum(sources, dTime);
+    int AmountOFConnectedSources = computeAmountOfConnectedSources(sources);
     divideActivePowerBaseOnRinternal(sources, PTotalLoad, RintSum, AmountOFConnectedSources);
 }
 
-void AllLoadDivider::DivideReactiveLoadBetweenSources(std::map<std::string, Source *> &sources, double QTotalLoad) {
-    double RintSum = computeRinSourceSum(sources);
-    double AmountOFConnectedSources = computeAmountOfConnectedSources(sources);
+void AllLoadDivider::DivideReactiveLoadBetweenSources(std::map<std::string, Source *> &sources, double QTotalLoad, unsigned int dTime) {
+    double RintSum = computeRinSourceSum(sources, dTime);
+    int AmountOFConnectedSources = computeAmountOfConnectedSources(sources);
     divideReactivePowerBaseOnRinternal(sources, QTotalLoad, RintSum, AmountOFConnectedSources);
 }
 
-double AllLoadDivider::computeRinSourceSum(std::map<std::string, Source *> &sources) {
+double AllLoadDivider::computeRinSourceSum(std::map<std::string, Source *> &sources, unsigned int dTime) {
     double SumRint = 0;
-    auto RintSummator = [&SumRint] (Source* source) {
+    auto RintSummator = [&SumRint, dTime] (Source* source) {
         if (source->getIsConnected()) {
-            SumRint += source->getRinternal();
+            SumRint += source->computeRinternal(dTime);
         }
     };
     doSmthWithMapValues<Source>(sources, RintSummator);

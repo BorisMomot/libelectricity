@@ -24,12 +24,12 @@ void GRU::calculate(unsigned int dTime) {
     computeBusFrequency();
     setBusVoltageToAll();
     setBusFrequencyToAll();
-    computeCurrentPconsumptions();
     computeNominalSourceP();
     auto calc = [dTime] (AbstractElModel* model){ model->calculate(dTime); };
     doSmthWithMapValues<Consumer>(consumers, calc);
+    computeCurrentGRUPconsumptions();
+    devideConsumptedPowerBetweenGenerators(dTime);
     doSmthWithMapValues<Source>(sources, calc);
-    computeCurrentPgeneration();
     computePowerReserv();
 }
 
@@ -85,6 +85,7 @@ void GRU::setBusVoltageToAll() {
         if (model->getIsConnected()){
             model->setU(busUcopy);
         }
+        model->setUbus(busUcopy);
     };
     doSmthWithMapValues<Consumer>(consumers, USetter);
     doSmthWithMapValues<Source>(sources, USetter);
@@ -96,12 +97,13 @@ void GRU::setBusFrequencyToAll() {
         if (model->getIsConnected()){
             model->setF(busFCopy);
         }
+        model->setFbus(busFCopy);
     };
     doSmthWithMapValues<Consumer>(consumers, FSetter);
     doSmthWithMapValues<Source>(sources, FSetter);
 }
 
-void GRU::computeCurrentPconsumptions() {
+void GRU::computeCurrentGRUPconsumptions() {
     currentConsumptionP=0;
     currentConsumptionQ=0;
     currentConsumptionS=0;
@@ -152,9 +154,9 @@ Consumer* GRU::getConsumerPtr(const string &name) {
     return (consumers.find(name)->second);
 }
 
-void GRU::computeCurrentPgeneration() {
-    AllLoadDivider::DivideActiveLoadBetweenSources(sources, currentConsumptionP);
-    AllLoadDivider::DivideReactiveLoadBetweenSources(sources, currentConsumptionQ);
+void GRU::devideConsumptedPowerBetweenGenerators(unsigned int dTime) {
+    AllLoadDivider::DivideActiveLoadBetweenSources(sources, currentConsumptionP, dTime);
+    AllLoadDivider::DivideReactiveLoadBetweenSources(sources, currentConsumptionQ, dTime);
 }
 
 void GRU::computePowerReserv() {

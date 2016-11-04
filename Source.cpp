@@ -146,3 +146,8 @@ void Source::calculateSourceU(unsigned int dTime) {
 void Source::calculateSourceF(unsigned int dTime) {
     U = Ua = Ub = Uc = targetU;
 }
+
+double Source::computeRinternal(unsigned int dTime) {
+    Rinternal = internalRcalculator->calculateRinternal(dTime, P, targetF, f);
+    return Rinternal;
+}
