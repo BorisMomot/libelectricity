@@ -24,3 +24,11 @@ void Consumer::calculate(unsigned int dTime)
         resetParameterToZero();
     }
 }
+
+bool Consumer::connectToGRU() {
+    return AbstractElModel::connectToGRU();
+}
+
+bool Consumer::disconnectToGRU() {
+    return AbstractElModel::disconnectToGRU();
+}

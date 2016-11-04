@@ -15,8 +15,15 @@ public:
     virtual void precalculate(unsigned int dTime) override {}
     virtual void calculate(unsigned int dTime) override ;
     virtual void aftercalculation(unsigned int dTime) override {}
+
+    double getPnom() const { return Pnom; }
+    double getQnom() const { return Qnom; }
+    double getSnom() const { return Snom; }
+    virtual bool connectToGRU() override;
+    virtual bool disconnectToGRU() override;
+
 protected:
-    double Pnom, Qnom, Snom; //номинальные мощности потребителя
+    double Pnom, Qnom, Snom;//номинальные мощности потребителя
 };
 
 

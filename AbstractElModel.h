@@ -41,6 +41,10 @@ public:
     virtual inline double getUa(){return Ua;}
     virtual inline double getUb(){return Ub;}
     virtual inline double getUc(){return Uc;}
+    double getUbus() const { return Ubus; }
+    double getFbus() const { return Fbus; }
+    void setUbus(double Ubus) { AbstractElModel::Ubus = Ubus; }
+    void setFbus(double Fbus) { AbstractElModel::Fbus = Fbus; }
 
     virtual void calculatePowers();
     virtual void calculateCurrents();
@@ -57,6 +61,7 @@ protected:
     double f={0},I={0},U={0};
     double Ia,Ib,Ic,Ua,Ub,Uc;
     bool isConnected={false}; //подключен ли потребитель к шинам ГРУ
+    double Ubus={0}, Fbus={0};//напряжение и частота на шинах
 };
 
 

@@ -9,7 +9,9 @@ set(SOURCE_FILES_LIBELECTRICITY
         LoadDivider.cpp LoadDivider.h
         AllLoadDivider.cpp AllLoadDivider.h
 		DG.cpp DG.h PID.cc PID.h
-		SimpleDrive.cpp SimpleDrive.h)
+		SimpleDrive.cpp SimpleDrive.h
+		Q.cpp Q.h
+		Q_withDisc.cpp Q_withDisc.h)
 
 add_library(libelectricity STATIC ${SOURCE_FILES_LIBELECTRICITY})
 
