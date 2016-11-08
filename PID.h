@@ -5,6 +5,7 @@
 #ifndef LIBELECTRICITY_PID_H
 #define LIBELECTRICITY_PID_H
 
+#include <chrono>
 
 class PID {
 public:
@@ -15,7 +16,7 @@ public:
 	double getTi() const;
 	bool setTi(double Ti);
 
-	double computeOutput(unsigned int dTime, double error);
+	double computeOutput(std::chrono::milliseconds dTime, double error);
 
 protected:
 	//Настройки для ПИ-регулятора

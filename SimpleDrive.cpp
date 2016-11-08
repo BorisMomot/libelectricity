@@ -14,7 +14,7 @@ SimpleDrive::SimpleDrive(unsigned int Pnominal, unsigned int RPMnom, unsigned in
     }
 }
 
-void SimpleDrive::calculate(unsigned int dTime) {
+void SimpleDrive::calculate(std::chrono::milliseconds dTime) {
     if (isConnected){
         RPM = targetRPM;
         computeDrivePowers();

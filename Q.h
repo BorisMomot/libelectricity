@@ -9,9 +9,9 @@
 
 class Q : public AbstractModel {
 public:
-    virtual void precalculate(unsigned int dTime) override {}
-    virtual void calculate(unsigned int dTime) override{}
-    virtual void aftercalculation(unsigned int dTime) override{}
+    virtual void precalculate(std::chrono::milliseconds dTime) override {}
+    virtual void calculate(std::chrono::milliseconds dTime) override{}
+    virtual void aftercalculation(std::chrono::milliseconds dTime) override{}
 
     virtual bool connectTo(double U, double f);
     virtual bool disconnect();

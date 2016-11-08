@@ -11,7 +11,7 @@ class SimpleDrive: public Consumer {
 public:
     SimpleDrive(unsigned int Pnominal, unsigned int RPMnom, unsigned int Qnominal  = 0);
 
-    virtual void calculate(unsigned int dTime) override;
+    virtual void calculate(std::chrono::milliseconds dTime) override;
     bool setRPM(int targetRPM);
 
     inline int getTargetRPM() const { return targetRPM; }

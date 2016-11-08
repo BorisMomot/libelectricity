@@ -33,7 +33,7 @@ bool PID::setTi(double Ti) {
 	}
 }
 
-double PID::computeOutput(unsigned int dTime, double error) {
+double PID::computeOutput(std::chrono::milliseconds dTime, double error) {
 	double output;
 	//защищаемся от переполнения
 	if (fabs(integrMismatch) < 1e300){
@@ -50,7 +50,7 @@ double PID::computeOutput(unsigned int dTime, double error) {
 		}
 	}
 	if (Ti != 0) {
-		output = Kp * error + 1/Ti * Kp * dTime * integrMismatch;
+		output = Kp * error + 1/Ti * Kp * dTime.count() * integrMismatch;
 	}
 	else {
 		output = -1;

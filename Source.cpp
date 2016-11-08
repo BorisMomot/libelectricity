@@ -14,7 +14,7 @@ Source::Source(double Pnominal, double Qnominal, double Unominal):
     internalRcalculator = new RintCalculator(Pnominal, Unominal);
 }
 
-void Source::calculate(unsigned int dTime)
+void Source::calculate(std::chrono::milliseconds dTime)
 {
     calculatePowers();
     calculateCurrents();
@@ -139,15 +139,15 @@ bool Source::setRCalculator(RintCalculator *Rcalc) {
     }
 }
 
-void Source::calculateSourceU(unsigned int dTime) {
+void Source::calculateSourceU(std::chrono::milliseconds dTime) {
     U = Ua = Ub = Uc = targetU;
 }
 
-void Source::calculateSourceF(unsigned int dTime) {
+void Source::calculateSourceF(std::chrono::milliseconds dTime) {
     U = Ua = Ub = Uc = targetU;
 }
 
-double Source::computeRinternal(unsigned int dTime) {
+double Source::computeRinternal(std::chrono::milliseconds dTime) {
     Rinternal = internalRcalculator->calculateRinternal(dTime, P, targetF, f);
     return Rinternal;
 }

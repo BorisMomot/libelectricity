@@ -15,16 +15,16 @@ public:
     Source(double Pnominal, double Qnominal, double Unominal = 400);
     virtual ~Source();
 
-    virtual void precalculate(unsigned int dTime) override {}
-    virtual void calculate(unsigned int dTime) override ;
-    virtual void aftercalculation(unsigned int dTime) override {}
+    virtual void precalculate(std::chrono::milliseconds dTime) override {}
+    virtual void calculate(std::chrono::milliseconds dTime) override ;
+    virtual void aftercalculation(std::chrono::milliseconds dTime) override {}
 
     virtual inline bool startSource(){isStarted = true; return true;}
     virtual inline bool getIsStarted(){return isStarted;}
     virtual bool stopSource();
 
-    virtual void calculateSourceU(unsigned int dTime);
-    virtual void calculateSourceF(unsigned int dTime);
+    virtual void calculateSourceU(std::chrono::milliseconds dTime);
+    virtual void calculateSourceF(std::chrono::milliseconds dTime);
 
     virtual bool setF(unsigned int frequency) override;
     virtual bool setU(unsigned int voltage) override;
@@ -42,7 +42,7 @@ public:
     virtual inline double getUnominal(){return Unom;}
     virtual inline double getTargetF(){return targetF;}
     virtual inline double getTargetU(){return targetU;}
-    virtual inline double computeRinternal(unsigned int dTime);
+    virtual inline double computeRinternal(std::chrono::milliseconds dTime);
     virtual inline double getRinternal(){return Rinternal;}
 
     bool setRCalculator(RintCalculator* Rcalc);

@@ -16,17 +16,17 @@ Pnom(Pnominal), Unom(Unominal), Kkonstr(Kkonstractional)
     }
 }
 
-double RintCalculator::calculateRinternal(unsigned int dTime, double Pcurrent, double Ftarget, double Fcurrent, double Pkr) {
+double RintCalculator::calculateRinternal(std::chrono::milliseconds dTime, double Pcurrent, double Ftarget, double Fcurrent, double Pkr) {
     double R, sinFi;
     sinFi = calculatesinFi(dTime, Pcurrent, Ftarget, Fcurrent, Pkr);
     R = static_cast<double>(Unom)*static_cast<double>(Unom)*EfficiencyNom/(1-EfficiencyNom)/Pnom + Kkonstr*sinFi/Pnom;
     return R;
 }
-double RintCalculator::calculatesinFi(unsigned int dTime, double Pcurrent, double Ftarget, double Fcurrent, double Pkr) {
+double RintCalculator::calculatesinFi(std::chrono::milliseconds dTime, double Pcurrent, double Ftarget, double Fcurrent, double Pkr) {
     if (Pkr < Pnom || Pkr <= 0) {
-        return Pcurrent/(Pnom*4) - (Ftarget - Fcurrent)*dTime/1000; //принимаем по дефолту, что критическая мощность в 4 раза больше номинальной
+        return Pcurrent/(Pnom*4) - (Ftarget - Fcurrent)* dTime.count()/1000; //принимаем по дефолту, что критическая мощность в 4 раза больше номинальной
     }
     else {
-        return Pcurrent/Pkr - (Ftarget - Fcurrent)*dTime/1000;
+        return Pcurrent/Pkr - (Ftarget - Fcurrent)*dTime.count()/1000;
     }
 }
