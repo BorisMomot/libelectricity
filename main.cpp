@@ -3,6 +3,7 @@
 #include "ModelRunner.h"
 #include <chrono>
 #include <thread>
+#include <future>
 
 using namespace std;
 
@@ -29,17 +30,14 @@ int main() {
     cout<<"SomeConsumer get current P = "<<consumer1.getP()<<endl;
 
     //тестим многопоточность
-    ModelRunner mr1, mr2;
+    ModelRunner mr1(chrono::milliseconds(100)), mr2(chrono::milliseconds(100));
     mr1.addModel(&gru1);
+    mr2.addModel(&gru1);
 
+    auto threadTestFunct = [] {cout << "THread test func" << endl; this_thread::sleep_for(chrono::milliseconds(10000));};
 
-    cout<<"Debug1"<<endl;
-    thread tr1(mr1);
-    cout<<"Debug2"<<endl;
-    if (tr1.joinable()){
-        tr1.join();
-    }
-    cout<<"Debug3"<<endl;
+    auto tr1 = async(launch::async, mr1);
+    auto tr2 = async(launch::async, mr2);
 
     return 0;
 }

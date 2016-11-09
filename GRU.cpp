@@ -6,19 +6,19 @@
 
 using namespace std;
 
-void GRU::precalculate(unsigned int dTime) {
+void GRU::precalculate(chrono::milliseconds dTime) {
     auto precalc = [dTime] (AbstractElModel* model){ model->precalculate(dTime); };
     doSmthWithMapValues<Consumer>(consumers, precalc);
     doSmthWithMapValues<Source>(sources, precalc);
 }
 
-void GRU::aftercalculation(unsigned int dTime) {
+void GRU::aftercalculation(chrono::milliseconds dTime) {
     auto aftercalc = [dTime] (AbstractElModel* model){ model->aftercalculation(dTime); };
     doSmthWithMapValues<Consumer>(consumers, aftercalc);
     doSmthWithMapValues<Source>(sources, aftercalc);
 }
 
-void GRU::calculate(unsigned int dTime) {
+void GRU::calculate(chrono::milliseconds dTime) {
     computeSourcesUandF(dTime);
     computeBusVoltage();
     computeBusFrequency();
@@ -31,9 +31,10 @@ void GRU::calculate(unsigned int dTime) {
     devideConsumptedPowerBetweenGenerators(dTime);
     doSmthWithMapValues<Source>(sources, calc);
     computePowerReserv();
+    computeSumRint(dTime);
 }
 
-void GRU::computeSourcesUandF(unsigned int dTime) {
+void GRU::computeSourcesUandF(std::chrono::milliseconds dTime) {
     auto compUandF = [dTime] (Source* source) {source->calculateSourceF(dTime);};
     doSmthWithMapValues(sources, compUandF);
 }
@@ -154,7 +155,7 @@ Consumer* GRU::getConsumerPtr(const string &name) {
     return (consumers.find(name)->second);
 }
 
-void GRU::devideConsumptedPowerBetweenGenerators(unsigned int dTime) {
+void GRU::devideConsumptedPowerBetweenGenerators(std::chrono::milliseconds dTime) {
     AllLoadDivider::DivideActiveLoadBetweenSources(sources, currentConsumptionP, dTime);
     AllLoadDivider::DivideReactiveLoadBetweenSources(sources, currentConsumptionQ, dTime);
 }
@@ -163,4 +164,8 @@ void GRU::computePowerReserv() {
     Preserv = PnomSources - currentConsumptionP;
     Qreserv = QnomSources - currentConsumptionQ;
     Sreserv = SnomSources - currentConsumptionS;
+}
+
+void GRU::computeSumRint(std::chrono::milliseconds dTime) {
+    SumRint = AllLoadDivider::computeRinSourceSum(sources,dTime);
 }

@@ -66,7 +66,7 @@ bool AbstractElModel::setU(unsigned int voltage)
     }
 }
 
-void AbstractElModel::calculate(unsigned int dTime)
+void AbstractElModel::calculate(std::chrono::milliseconds dTime)
 {
     calculatePowers();
     calculateCurrents();

@@ -43,7 +43,7 @@ TEST_F(AbstractElModel_Test, test220) {
     EXPECT_TRUE(testElModel.setQ(Q));
     testElModel.setUbus(U);
     testElModel.setFbus(f);
-    testElModel.calculate(1);
+    testElModel.calculate(std::chrono::milliseconds(1));
     //проверяем как задались значения
     EXPECT_DOUBLE_EQ(testElModel.getf(), f);
     EXPECT_DOUBLE_EQ(testElModel.getUa(), U);
@@ -79,7 +79,7 @@ TEST_F(AbstractElModel_Test, test6000) {
     EXPECT_TRUE(testElModel.setF(f));
     EXPECT_TRUE(testElModel.setP(P));
     EXPECT_TRUE(testElModel.setQ(Q));
-    testElModel.calculate(1);
+    testElModel.calculate(std::chrono::milliseconds(1));
     //проверяем как задались значения
     EXPECT_DOUBLE_EQ(testElModel.getf(), f);
     EXPECT_DOUBLE_EQ(testElModel.getUa(), U);

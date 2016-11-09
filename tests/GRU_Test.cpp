@@ -3,7 +3,8 @@
 //
 
 #include "GRU_Test.h"
-
+#include <chrono>
+using namespace std;
 
 GRU_Test::GRU_Test() {}
 
@@ -29,8 +30,8 @@ TEST_F(GRU_Test, CheckInitialisation) {
     EXPECT_DOUBLE_EQ(gru1.getPreserv(), 0);
     EXPECT_DOUBLE_EQ(gru1.getQreserv(), 0);
     EXPECT_DOUBLE_EQ(gru1.getSreserv(), 0);
-    gru1.calculate(1);
-    gru1.calculate(1);
+    gru1.calculate(chrono::milliseconds(1));
+    gru1.calculate(chrono::milliseconds(1));
     EXPECT_DOUBLE_EQ(gru1.getCurrentConsumptionP(), 0);
     EXPECT_DOUBLE_EQ(gru1.getCurrentConsumptionQ(), 0);
     EXPECT_DOUBLE_EQ(gru1.getCurrentConsumptionS(), 0);
@@ -67,7 +68,7 @@ TEST_F(GRU_Test, checkNetworkParametersANDTwoSourcesDividing) {
     //проверка что источник и потребитель подключились
     EXPECT_TRUE(gen1.getIsConnected());
     EXPECT_TRUE(consumer1.getIsConnected());
-    gru1.calculate(1);
+    gru1.calculate(chrono::milliseconds(1));
     //проверка, что частота на шинах выставилась правильно
     EXPECT_DOUBLE_EQ(gru1.getCurrentF(), (double)f);
     //проверка, что напряжение на шинах выставилось верно
@@ -116,7 +117,7 @@ TEST_F(GRU_Test, checkTwoSourcesDividing) {
     //проверка что источник и потребитель подключились
     EXPECT_TRUE(gen1.getIsConnected());
     EXPECT_TRUE(consumer1.getIsConnected());
-    gru1.calculate(1);
+    gru1.calculate(chrono::milliseconds(1));
     //проверка распределения мощности между источниками
     EXPECT_DOUBLE_EQ(gen1.getP(), (double)750000);
 }
@@ -143,7 +144,7 @@ TEST_F(GRU_Test, checkThreeSourcesDividing) {
     gen1.setF(f);
     gen1.connectToGRU();
     consumer1.connectToGRU();
-    gru1.calculate(1);
+    gru1.calculate(chrono::milliseconds(1));
     //проверка распределения мощности между источниками
     EXPECT_DOUBLE_EQ(gen1.getP(), (double)500000);
 }
@@ -174,15 +175,15 @@ TEST_F(GRU_Test, checkLoadDividingAfterDisconnectionBetweenDifferentSources) {
     gen2.connectToGRU();
     consumer1.connectToGRU();
 
-    gru1.calculate(1);
-    gru1.calculate(1);
+    gru1.calculate(chrono::milliseconds(1));
+    gru1.calculate(chrono::milliseconds(1));
 
     //проверка распределения мощности между источниками
     EXPECT_DOUBLE_EQ(gen1.getP(), (double)PnomConsumption*2/3);
     EXPECT_DOUBLE_EQ(gen2.getP(), (double)PnomConsumption*1/3);
 
     gen2.disconnectToGRU();
-    gru1.calculate(1);
+    gru1.calculate(chrono::milliseconds(1));
     EXPECT_DOUBLE_EQ(gen1.getP(), (double)PnomConsumption);
     EXPECT_DOUBLE_EQ(gen2.getP(), (double)0);
 }
@@ -209,7 +210,7 @@ TEST_F(GRU_Test, CheckPowerReserws) {
     //проверка что источник и потребитель подключились
     EXPECT_TRUE(gen1.getIsConnected());
     EXPECT_TRUE(consumer1.getIsConnected());
-    gru1.calculate(1);
+    gru1.calculate(chrono::milliseconds(1));
     EXPECT_DOUBLE_EQ(gru1.getCurrentConsumptionP(), PnomConsumption);
     EXPECT_DOUBLE_EQ(gru1.getCurrentConsumptionQ(), 0);
     EXPECT_DOUBLE_EQ(gru1.getCurrentConsumptionS(), PnomConsumption);

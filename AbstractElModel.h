@@ -49,9 +49,9 @@ public:
     virtual void calculatePowers();
     virtual void calculateCurrents();
 
-    virtual void precalculate(unsigned int dTime) override {}
-    virtual void calculate(unsigned int dTime) override;
-    virtual void aftercalculation(unsigned int dTime) override {}
+    virtual void precalculate(std::chrono::milliseconds dTime) override {}
+    virtual void calculate(std::chrono::milliseconds dTime) override;
+    virtual void aftercalculation(std::chrono::milliseconds dTime) override {}
 
     virtual ~AbstractElModel() = 0;
 protected:

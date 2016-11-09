@@ -14,11 +14,11 @@
 class AllLoadDivider {
 public:
     //функции для деления нагрузки
-    static void DivideActiveLoadBetweenSources(std::map<std::string, Source*> &sources, double PTotalLoad, unsigned int dTime);
-    static void DivideReactiveLoadBetweenSources(std::map<std::string, Source*> &sources, double QTotalLoad, unsigned int dTime);
+    static void DivideActiveLoadBetweenSources(std::map<std::string, Source*> &sources, double PTotalLoad, std::chrono::milliseconds dTime);
+    static void DivideReactiveLoadBetweenSources(std::map<std::string, Source*> &sources, double QTotalLoad, std::chrono::milliseconds dTime);
 
     //функция вычисляющая суммарное внутреннее сопротивелние всех источников
-    static double computeRinSourceSum(std::map<std::string, Source *> &sources, unsigned int dTime);
+    static double computeRinSourceSum(std::map<std::string, Source *> &sources, std::chrono::milliseconds dTime);
     //функция вычисляющая количество источников подключенных к шинам ГРУ
     static int computeAmountOfConnectedSources(std::map<std::string, Source*> &sources);
 

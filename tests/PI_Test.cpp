@@ -27,17 +27,17 @@ TEST_F(PI_Test, check_coef_Settings) {
 //Проверяем, что ПИ-регулятор считает правильно
 TEST_F(PI_Test, check_step_Calculation){
     PID pi(1);
-    unsigned int dTime = 5; //временной шаг
+    std::chrono::milliseconds dTime(5); //временной шаг
     double error = 4; //ошибка между заданием и фактиеским
     double Integrator = 0;
-    double outputFirstStep = pi.getKp()*(error+dTime*error/pi.getTi());
-    Integrator = dTime*error/pi.getTi();
+    double outputFirstStep = pi.getKp()*(error+dTime.count()*error/pi.getTi());
+    Integrator = dTime.count()*error/pi.getTi();
     EXPECT_DOUBLE_EQ(pi.computeOutput(dTime, error), outputFirstStep);
 
-    double outputSecondStep = pi.getKp()*(error + Integrator + dTime*error/pi.getTi());
-    Integrator += dTime*error/pi.getTi();
+    double outputSecondStep = pi.getKp()*(error + Integrator + dTime.count()*error/pi.getTi());
+    Integrator += dTime.count()*error/pi.getTi();
     EXPECT_DOUBLE_EQ(pi.computeOutput(dTime, error), outputSecondStep);
 
-    double outputThirdStep = pi.getKp()*(error + Integrator + dTime*error/pi.getTi());
+    double outputThirdStep = pi.getKp()*(error + Integrator + dTime.count()*error/pi.getTi());
     EXPECT_DOUBLE_EQ(pi.computeOutput(dTime, error), outputThirdStep);
 }

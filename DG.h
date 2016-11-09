@@ -7,13 +7,14 @@
 
 #include "Source.h"
 #include "PID.h"
+#include <chrono>
 
 class DG: public Source {
 public:
 	DG(unsigned int Pnominal, unsigned int Qnominal, unsigned int Unominal=400);
 	virtual ~DG(){}
 
-	virtual void calculateSourceF(unsigned int dTime) override;
+	virtual void calculateSourceF(std::chrono::milliseconds dTime) override;
 
 	double getJ() const { return J; }
 	double getFuelFlow() const { return FuelFlow; }
@@ -27,10 +28,10 @@ public:
     double getTi(){ return pi.getTi();}
 protected:
 	inline void computeJ(); //
-	void computeFuelFlow(unsigned int dTime); //расчет уровня топлива подаваемого в дизель (ПИД регулятор)
-	void computeMdv(unsigned int dTime); //расчет момента дизеля
-	void computeMnagr(unsigned int dTime); //расчет текущего момента нагрузки
-	void computeRPM(unsigned int dTime); //расчет текущей скорости вращения ДГ
+	void computeFuelFlow(std::chrono::milliseconds dTime); //расчет уровня топлива подаваемого в дизель (ПИД регулятор)
+	void computeMdv(std::chrono::milliseconds dTime); //расчет момента дизеля
+	void computeMnagr(std::chrono::milliseconds dTime); //расчет текущего момента нагрузки
+	void computeRPM(std::chrono::milliseconds dTime); //расчет текущей скорости вращения ДГ
 
 	PID pi;
 	double J = {0}; //момент инерции ДГ

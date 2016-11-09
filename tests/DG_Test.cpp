@@ -47,7 +47,7 @@ TEST_F(DG_Test, check_Step_Calculation){
     dg.setKp(kp);
     dg.setTi(Ti);
 
-    unsigned int dTime = 1;
+    std::chrono::milliseconds dTime(1);
     dg.calculateSourceF(dTime);
     EXPECT_DOUBLE_EQ(dg.getf(), 0);
     EXPECT_DOUBLE_EQ(dg.getFuelFlow(), 0);

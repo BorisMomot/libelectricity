@@ -9,7 +9,7 @@ AbstractModel::AbstractModel()
 }
 
 AbstractModel::~AbstractModel(){}
-void AbstractModel::aftercalculation(unsigned int dTime){}
-void AbstractModel::calculate(unsigned int dTime){}
-void AbstractModel::precalculate(unsigned int dTime){}
+void AbstractModel::aftercalculation(std::chrono::milliseconds dTime){}
+void AbstractModel::calculate(std::chrono::milliseconds dTime){}
+void AbstractModel::precalculate(std::chrono::milliseconds dTime){}
 

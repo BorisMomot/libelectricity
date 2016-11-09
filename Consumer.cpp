@@ -11,7 +11,7 @@ Consumer::Consumer(unsigned int Pnominal, unsigned int Qnominal):
     Snom = sqrt (Pnom* Pnom + Qnom*Qnom);
 }
 
-void Consumer::calculate(unsigned int dTime)
+void Consumer::calculate(std::chrono::milliseconds dTime)
 {
     if (isConnected) {
         P = Pnom;

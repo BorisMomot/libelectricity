@@ -17,15 +17,32 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f50b9aa4-c180-4a7e-b8e5-6a679913c50c" name="Default" comment="Добавил в класс абстрактная эл. модель напряжение и частоту на шинах&#10;Добавил проверку в тесты&#10;Написал класс для простого выключателя&#10;Написал тесты к нему&#10;Написал класс для выключателя с минимальным расцепителем&#10;Написал тесты к нему">
+    <list default="true" id="f50b9aa4-c180-4a7e-b8e5-6a679913c50c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libelectricity.iml" afterPath="$PROJECT_DIR$/.idea/libelectricity.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbstractElModel.cpp" afterPath="$PROJECT_DIR$/AbstractElModel.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbstractElModel.h" afterPath="$PROJECT_DIR$/AbstractElModel.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbstractModel.cpp" afterPath="$PROJECT_DIR$/AbstractModel.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbstractModel.h" afterPath="$PROJECT_DIR$/AbstractModel.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AllLoadDivider.cpp" afterPath="$PROJECT_DIR$/AllLoadDivider.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AllLoadDivider.h" afterPath="$PROJECT_DIR$/AllLoadDivider.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Consumer.cpp" afterPath="$PROJECT_DIR$/Consumer.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Consumer.h" afterPath="$PROJECT_DIR$/Consumer.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DG.cpp" afterPath="$PROJECT_DIR$/DG.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DG.h" afterPath="$PROJECT_DIR$/DG.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GRU.cpp" afterPath="$PROJECT_DIR$/GRU.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GRU.h" afterPath="$PROJECT_DIR$/GRU.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source.cpp" afterPath="$PROJECT_DIR$/Source.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source.h" afterPath="$PROJECT_DIR$/Source.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ModelRunner.cpp" afterPath="$PROJECT_DIR$/ModelRunner.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ModelRunner.h" afterPath="$PROJECT_DIR$/ModelRunner.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/AbstractElModel_Test.cpp" afterPath="$PROJECT_DIR$/tests/AbstractElModel_Test.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/DG_Test.cpp" afterPath="$PROJECT_DIR$/tests/DG_Test.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/GRU_Test.cpp" afterPath="$PROJECT_DIR$/tests/GRU_Test.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/PI_Test.cpp" afterPath="$PROJECT_DIR$/tests/PI_Test.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/RintCalculator_Test.cpp" afterPath="$PROJECT_DIR$/tests/RintCalculator_Test.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/RintCalculator_Test.h" afterPath="$PROJECT_DIR$/tests/RintCalculator_Test.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/SimpleDrive_Test.cpp" afterPath="$PROJECT_DIR$/tests/SimpleDrive_Test.cpp" />
     </list>
     <ignored path="libelectricity.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,107 +62,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GRU.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GRU.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GRU.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GRU.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GRU.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+            <state relative-caret-position="3024">
+              <caret line="168" column="56" selection-start-line="168" selection-start-column="56" selection-end-line="168" selection-end-column="56" />
               <folding>
-                <element signature="e#80#316#0" expanded="false" />
-                <element signature="e#318#568#0" expanded="false" />
-                <element signature="e#1075#1255#0" expanded="false" />
-                <element signature="e#1257#1712#0" expanded="false" />
-                <element signature="e#1714#2170#0" expanded="false" />
-                <element signature="e#2172#2519#0" expanded="false" />
-                <element signature="e#2521#2870#0" expanded="false" />
-                <element signature="e#2872#3644#0" expanded="false" />
-                <element signature="e#3646#4067#0" expanded="false" />
-                <element signature="e#4069#4216#0" expanded="false" />
-                <element signature="e#4218#4353#0" expanded="false" />
-                <element signature="e#4355#4445#0" expanded="false" />
-                <element signature="e#4447#4543#0" expanded="false" />
-                <element signature="e#4545#4797#0" expanded="false" />
-                <element signature="e#4799#4980#0" expanded="false" />
+                <element signature="e#80#324#0" expanded="false" />
+                <element signature="e#326#584#0" expanded="false" />
+                <element signature="e#586#1124#0" expanded="false" />
+                <element signature="e#1126#1319#0" expanded="false" />
+                <element signature="e#1321#1776#0" expanded="false" />
+                <element signature="e#1778#2234#0" expanded="false" />
+                <element signature="e#2236#2583#0" expanded="false" />
+                <element signature="e#2585#2934#0" expanded="false" />
+                <element signature="e#2936#3708#0" expanded="false" />
+                <element signature="e#3710#4131#0" expanded="false" />
+                <element signature="e#4133#4280#0" expanded="false" />
+                <element signature="e#4282#4417#0" expanded="false" />
+                <element signature="e#4419#4509#0" expanded="false" />
+                <element signature="e#4511#4607#0" expanded="false" />
+                <element signature="e#4609#4874#0" expanded="false" />
+                <element signature="e#4876#5057#0" expanded="false" />
+                <element signature="e#5059#5186#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AllLoadDivider.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AllLoadDivider.cpp">
+      <file leaf-file-name="ModelRunner.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ModelRunner.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="45" column="59" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="59" />
+            <state relative-caret-position="456">
+              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+              <folding>
+                <element signature="e#115#131#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractModel.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AbstractModel.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AllLoadDivider.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AllLoadDivider.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoadDivider.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LoadDivider.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoadDivider.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LoadDivider.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GRU_Test.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/GRU_Test.cpp">
+      <file leaf-file-name="ModelRunner.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ModelRunner.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Source.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source.h">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="44" column="61" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="61" />
+            <state relative-caret-position="414">
+              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Source.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source.cpp">
+      <file leaf-file-name="allocator.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/c++/4.8/bits/allocator.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="783">
-              <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
+            <state relative-caret-position="1728">
+              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -162,38 +165,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/AbstractModel.h" />
-        <option value="$PROJECT_DIR$/AbstractModel.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/tests/AbstractElModel_Test.h" />
         <option value="$PROJECT_DIR$/tests/tests.cpp" />
         <option value="$PROJECT_DIR$/LoadDivider.h" />
-        <option value="$PROJECT_DIR$/tests/RintCalculator_Test.h" />
-        <option value="$PROJECT_DIR$/tests/RintCalculator_Test.cpp" />
         <option value="$PROJECT_DIR$/tests/LoadDivider_Test.h" />
         <option value="$PROJECT_DIR$/tests/LoadDivider_Test.cpp" />
         <option value="$PROJECT_DIR$/tests/GRU_Test.h" />
         <option value="$PROJECT_DIR$/tests/SourceModel_Test.h" />
-        <option value="$PROJECT_DIR$/RintCalculator.h" />
-        <option value="$PROJECT_DIR$/RintCalculator.cpp" />
         <option value="$PROJECT_DIR$/LoadDivider.cpp" />
         <option value="$PROJECT_DIR$/ActiveLoadDivider.h" />
         <option value="$PROJECT_DIR$/ActiveLoadDivider.cpp" />
         <option value="$PROJECT_DIR$/GRU_functions.h" />
         <option value="$PROJECT_DIR$/tests/PI_Test.h" />
-        <option value="$PROJECT_DIR$/tests/PI_Test.cpp" />
-        <option value="$PROJECT_DIR$/DG.h" />
         <option value="$PROJECT_DIR$/tests/DG_Test.h" />
         <option value="$PROJECT_DIR$/tests/SourceModel_Test.cpp" />
-        <option value="$PROJECT_DIR$/tests/DG_Test.cpp" />
-        <option value="$PROJECT_DIR$/DG.cpp" />
         <option value="$PROJECT_DIR$/AbstractElModel.cpp" />
-        <option value="$PROJECT_DIR$/SimpleDrive.h" />
         <option value="$PROJECT_DIR$/tests/SimpleDrive_Test.h" />
-        <option value="$PROJECT_DIR$/SimpleDrive.cpp" />
-        <option value="$PROJECT_DIR$/tests/SimpleDrive_Test.cpp" />
-        <option value="$PROJECT_DIR$/Consumer.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Q.cpp" />
         <option value="$PROJECT_DIR$/Q.h" />
         <option value="$PROJECT_DIR$/tests/CMakeLists.txt" />
@@ -201,16 +187,35 @@
         <option value="$PROJECT_DIR$/Q_withDisc.h" />
         <option value="$PROJECT_DIR$/Q_withDisc.cpp" />
         <option value="$PROJECT_DIR$/tests/Q_Test.cpp" />
-        <option value="$PROJECT_DIR$/Consumer.h" />
         <option value="$PROJECT_DIR$/AbstractElModel.h" />
-        <option value="$PROJECT_DIR$/tests/AbstractElModel_Test.cpp" />
-        <option value="$PROJECT_DIR$/AllLoadDivider.h" />
-        <option value="$PROJECT_DIR$/Source.h" />
-        <option value="$PROJECT_DIR$/AllLoadDivider.cpp" />
-        <option value="$PROJECT_DIR$/GRU.cpp" />
-        <option value="$PROJECT_DIR$/Source.cpp" />
+        <option value="$PROJECT_DIR$/AbstractModel.h" />
         <option value="$PROJECT_DIR$/tests/GRU_Test.cpp" />
+        <option value="$PROJECT_DIR$/Consumer.h" />
+        <option value="$PROJECT_DIR$/Consumer.cpp" />
+        <option value="$PROJECT_DIR$/Source.h" />
+        <option value="$PROJECT_DIR$/Source.cpp" />
+        <option value="$PROJECT_DIR$/RintCalculator.h" />
+        <option value="$PROJECT_DIR$/RintCalculator.cpp" />
+        <option value="$PROJECT_DIR$/DG.h" />
+        <option value="$PROJECT_DIR$/DG.cpp" />
+        <option value="$PROJECT_DIR$/PID.h" />
+        <option value="$PROJECT_DIR$/PID.cc" />
+        <option value="$PROJECT_DIR$/SimpleDrive.h" />
+        <option value="$PROJECT_DIR$/SimpleDrive.cpp" />
+        <option value="$PROJECT_DIR$/AllLoadDivider.cpp" />
+        <option value="$PROJECT_DIR$/AllLoadDivider.h" />
         <option value="$PROJECT_DIR$/GRU.h" />
+        <option value="$PROJECT_DIR$/GRU.cpp" />
+        <option value="$PROJECT_DIR$/tests/RintCalculator_Test.h" />
+        <option value="$PROJECT_DIR$/tests/RintCalculator_Test.cpp" />
+        <option value="$PROJECT_DIR$/tests/PI_Test.cpp" />
+        <option value="$PROJECT_DIR$/tests/DG_Test.cpp" />
+        <option value="$PROJECT_DIR$/tests/AbstractElModel_Test.cpp" />
+        <option value="$PROJECT_DIR$/tests/SimpleDrive_Test.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/ModelRunner.h" />
+        <option value="$PROJECT_DIR$/ModelRunner.cpp" />
       </list>
     </option>
   </component>
@@ -222,9 +227,8 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
     <option name="y" value="25" />
-    <option name="width" value="1922" />
+    <option name="width" value="1920" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -496,7 +500,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="test1" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libelectricity" TARGET_NAME="test1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libelectricity" RUN_TARGET_NAME="test1" TEST_MODE="SUITE_TEST">
+    <configuration default="false" name="test1" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libelectricity" TARGET_NAME="libelectricity_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libelectricity" RUN_TARGET_NAME="libelectricity_run" TEST_MODE="SUITE_TEST">
       <envs />
       <method />
     </configuration>
@@ -536,7 +540,10 @@
       <workItem from="1477731411911" duration="7116000" />
       <workItem from="1478026089051" duration="5208000" />
       <workItem from="1478113395073" duration="6293000" />
-      <workItem from="1478246477338" duration="11454000" />
+      <workItem from="1478246477338" duration="13450000" />
+      <workItem from="1478276824753" duration="1219000" />
+      <workItem from="1478630659468" duration="8067000" />
+      <workItem from="1478720297459" duration="3971000" />
     </task>
     <task id="LOCAL-00001" summary="Написал тесты для распределения нагрузки и вычисления внутреннего сопротивления.">
       <created>1476912928133</created>
@@ -601,43 +608,57 @@
       <option name="project" value="LOCAL" />
       <updated>1478256504031</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Переделал расчет внутреннего сопротивления и распределения мощности (исправил ошибку, что функцию расчета для ГРУ нужно было вызывать дважды)">
+      <created>1478261269380</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1478261269380</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Добавил заготовку класса запуска моделей. Перешел на chrono">
+      <created>1478638961177</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1478638961177</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="test1 - 2016.11.04 at 14h 25m 35s.xml">
+    <history-entry file="test1 - 2016.11.09 at 23h 33m 42s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="test1 - 2016.11.04 at 14h 26m 20s.xml">
+    <history-entry file="test1 - 2016.11.09 at 23h 38m 02s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="test1 - 2016.11.04 at 14h 26m 55s.xml">
+    <history-entry file="test1 - 2016.11.09 at 23h 39m 20s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="test1 - 2016.11.04 at 14h 38m 28s.xml">
+    <history-entry file="test1 - 2016.11.09 at 23h 40m 02s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="test1 - 2016.11.04 at 14h 38m 32s.xml">
+    <history-entry file="test1 - 2016.11.09 at 23h 40m 37s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="test1 - 2016.11.04 at 14h 44m 17s.xml">
+    <history-entry file="test1 - 2016.11.09 at 23h 44m 49s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="test1 - 2016.11.04 at 14h 48m 59s.xml">
+    <history-entry file="test1 - 2016.11.09 at 23h 50m 01s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="test1 - 2016.11.04 at 14h 52m 27s.xml">
+    <history-entry file="test1 - 2016.11.09 at 23h 52m 09s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="test1 - 2016.11.04 at 14h 52m 29s.xml">
+    <history-entry file="test1 - 2016.11.09 at 23h 53m 33s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="test1 - 2016.11.04 at 15h 02m 52s.xml">
+    <history-entry file="test1 - 2016.11.09 at 23h 57m 51s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105090000" />
+    <option name="totallyTimeSpent" value="120343000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -649,15 +670,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="25" width="1922" height="1055" extended-state="6" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24895833" sideWeight="0.492163" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24869657" sideWeight="0.492163" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845187" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986959" sideWeight="0.49425286" order="2" side_tool="false" content_ui="tabs" />
@@ -669,6 +689,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -691,7 +712,9 @@
     <MESSAGE value="Написал простой имитатор привода и тесты к нему" />
     <MESSAGE value="Написал несколько тестов к классу ГРУ. Исправил мелкие ошибки инициализации и резервов мощности" />
     <MESSAGE value="Добавил в класс абстрактная эл. модель напряжение и частоту на шинах&#10;Добавил проверку в тесты&#10;Написал класс для простого выключателя&#10;Написал тесты к нему&#10;Написал класс для выключателя с минимальным расцепителем&#10;Написал тесты к нему" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил в класс абстрактная эл. модель напряжение и частоту на шинах&#10;Добавил проверку в тесты&#10;Написал класс для простого выключателя&#10;Написал тесты к нему&#10;Написал класс для выключателя с минимальным расцепителем&#10;Написал тесты к нему" />
+    <MESSAGE value="Переделал расчет внутреннего сопротивления и распределения мощности (исправил ошибку, что функцию расчета для ГРУ нужно было вызывать дважды)" />
+    <MESSAGE value="Добавил заготовку класса запуска моделей. Перешел на chrono" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил заготовку класса запуска моделей. Перешел на chrono" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -700,55 +723,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/c++/4.8/bits/move.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/4.8/bits/stl_pair.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/4.8/bits/allocator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/4.8/ext/new_allocator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/googletest/googletest/include/gtest/gtest.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="276" column="0" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/googletest/googletest/include/gtest/internal/gtest-port.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="1118" column="0" selection-start-line="1118" selection-start-column="0" selection-end-line="1118" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/googletest/googletest/src/gtest.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="2783" column="0" selection-start-line="2783" selection-start-column="0" selection-end-line="2783" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/4.8/bits/stl_map.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -777,20 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RintCalculator.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PID.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/DG_Test.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -798,36 +758,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/DG_Test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DG.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DG.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-          <folding>
-            <element signature="e#1#16#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/SourceModel_Test.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -845,37 +779,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleDrive.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleDrive.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/SimpleDrive_Test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AbstractElModel.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,31 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Consumer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AbstractModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="64" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -931,15 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/PI_Test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,7 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -955,9 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#105#122#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -965,9 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#63#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -975,7 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -983,15 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Consumer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,25 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AbstractElModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="34" column="32" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="32" />
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="32" />
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AbstractElModel_Test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,23 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="44" column="61" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RintCalculator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,71 +867,247 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AllLoadDivider.cpp">
+    <entry file="file://$PROJECT_DIR$/AbstractElModel.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="45" column="59" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AllLoadDivider.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="108">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="32" />
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="32" />
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/GRU_Test.cpp">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Consumer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Consumer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RintCalculator.h">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
-          <folding />
+          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RintCalculator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DG.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DG.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PID.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PID.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleDrive.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleDrive.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AllLoadDivider.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="17" column="140" selection-start-line="17" selection-start-column="140" selection-end-line="17" selection-end-column="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AllLoadDivider.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="13" column="146" selection-start-line="13" selection-start-column="146" selection-end-line="13" selection-end-column="146" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GRU.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="415">
+          <caret line="67" column="55" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GRU.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+        <state relative-caret-position="3024">
+          <caret line="168" column="56" selection-start-line="168" selection-start-column="56" selection-end-line="168" selection-end-column="56" />
           <folding>
-            <element signature="e#80#316#0" expanded="false" />
-            <element signature="e#318#568#0" expanded="false" />
-            <element signature="e#1075#1255#0" expanded="false" />
-            <element signature="e#1257#1712#0" expanded="false" />
-            <element signature="e#1714#2170#0" expanded="false" />
-            <element signature="e#2172#2519#0" expanded="false" />
-            <element signature="e#2521#2870#0" expanded="false" />
-            <element signature="e#2872#3644#0" expanded="false" />
-            <element signature="e#3646#4067#0" expanded="false" />
-            <element signature="e#4069#4216#0" expanded="false" />
-            <element signature="e#4218#4353#0" expanded="false" />
-            <element signature="e#4355#4445#0" expanded="false" />
-            <element signature="e#4447#4543#0" expanded="false" />
-            <element signature="e#4545#4797#0" expanded="false" />
-            <element signature="e#4799#4980#0" expanded="false" />
+            <element signature="e#80#324#0" expanded="false" />
+            <element signature="e#326#584#0" expanded="false" />
+            <element signature="e#586#1124#0" expanded="false" />
+            <element signature="e#1126#1319#0" expanded="false" />
+            <element signature="e#1321#1776#0" expanded="false" />
+            <element signature="e#1778#2234#0" expanded="false" />
+            <element signature="e#2236#2583#0" expanded="false" />
+            <element signature="e#2585#2934#0" expanded="false" />
+            <element signature="e#2936#3708#0" expanded="false" />
+            <element signature="e#3710#4131#0" expanded="false" />
+            <element signature="e#4133#4280#0" expanded="false" />
+            <element signature="e#4282#4417#0" expanded="false" />
+            <element signature="e#4419#4509#0" expanded="false" />
+            <element signature="e#4511#4607#0" expanded="false" />
+            <element signature="e#4609#4874#0" expanded="false" />
+            <element signature="e#4876#5057#0" expanded="false" />
+            <element signature="e#5059#5186#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/4.8/bits/allocator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1728">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/RintCalculator_Test.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/RintCalculator_Test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/PI_Test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="40" column="75" selection-start-line="40" selection-start-column="75" selection-end-line="40" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/SimpleDrive_Test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="75" column="51" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AbstractElModel_Test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="81" column="53" selection-start-line="81" selection-start-column="53" selection-end-line="81" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/DG_Test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AbstractModel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModelRunner.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding>
+            <element signature="e#115#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModelRunner.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>

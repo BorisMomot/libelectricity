@@ -31,10 +31,10 @@ TEST_F(SimpleDrive_Test, checkRPM){
     EXPECT_TRUE(sDrive.setU(U));
     EXPECT_TRUE(sDrive.setF(f));
     EXPECT_TRUE(sDrive.setRPM(100));
-    sDrive.calculate(1);
+    sDrive.calculate(std::chrono::milliseconds(1));
     EXPECT_DOUBLE_EQ(sDrive.getRPM(), (double)100);
     sDrive.disconnectToGRU();
-    sDrive.calculate(1);
+    sDrive.calculate(std::chrono::milliseconds(1));
     EXPECT_DOUBLE_EQ(sDrive.getRPM(), (double)0);
 }
 
@@ -48,12 +48,12 @@ TEST_F(SimpleDrive_Test, checkPower){
     EXPECT_TRUE(sDrive.setU(U));
     EXPECT_TRUE(sDrive.setF(f));
     EXPECT_TRUE(sDrive.setRPM(RPMnom));
-    sDrive.calculate(1);
+    sDrive.calculate(std::chrono::milliseconds(1));
     EXPECT_DOUBLE_EQ(sDrive.getP(), (double)Pnom);
     EXPECT_DOUBLE_EQ(sDrive.getPa(), (double)Pnom/3);
     //отключаем от ГРУ
     sDrive.disconnectToGRU();
-    sDrive.calculate(1);
+    sDrive.calculate(std::chrono::milliseconds(1));
     EXPECT_DOUBLE_EQ(sDrive.getP(), 0);
     EXPECT_DOUBLE_EQ(sDrive.getPa(), 0);
 }
@@ -68,12 +68,12 @@ TEST_F(SimpleDrive_Test, checkCurrents){
     EXPECT_TRUE(sDrive.setU(U));
     EXPECT_TRUE(sDrive.setF(f));
     EXPECT_TRUE(sDrive.setRPM(RPMnom));
-    sDrive.calculate(1);
+    sDrive.calculate(std::chrono::milliseconds(1));
     EXPECT_DOUBLE_EQ(sDrive.getI(), (double)Pnom/U);
     EXPECT_DOUBLE_EQ(sDrive.getIa(), (double)Pnom/U/3);
     //отключаем от ГРУ
     sDrive.disconnectToGRU();
-    sDrive.calculate(1);
+    sDrive.calculate(std::chrono::milliseconds(1));
     EXPECT_DOUBLE_EQ(sDrive.getI(), 0);
     EXPECT_DOUBLE_EQ(sDrive.getIa(), 0);
 }

@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.6)
 project(libelectricity)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+find_package(Threads)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
 set(SOURCE_FILES_LIBELECTRICITY
         AbstractModel.cpp AbstractModel.h AbstractElModel.cpp AbstractElModel.h Consumer.cpp Consumer.h Source.cpp Source.h GRU.cpp GRU.h
@@ -11,7 +13,8 @@ set(SOURCE_FILES_LIBELECTRICITY
 		DG.cpp DG.h PID.cc PID.h
 		SimpleDrive.cpp SimpleDrive.h
 		Q.cpp Q.h
-		Q_withDisc.cpp Q_withDisc.h)
+		Q_withDisc.cpp Q_withDisc.h
+		ModelRunner.cpp ModelRunner.h)
 
 add_library(libelectricity STATIC ${SOURCE_FILES_LIBELECTRICITY})
 

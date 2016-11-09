@@ -21,9 +21,9 @@ public:
     GRU(){}
     virtual ~GRU(){}
 
-    virtual void precalculate(unsigned int dTime) override;
-    virtual void calculate(unsigned int dTime) override;
-    virtual void aftercalculation(unsigned int dTime) override;
+    virtual void precalculate(std::chrono::milliseconds dTime) override;
+    virtual void calculate(std::chrono::milliseconds dTime) override;
+    virtual void aftercalculation(std::chrono::milliseconds dTime) override;
 
     virtual bool addSource(const std::string& name, Source* source);
     virtual bool addConsumer(const std::string& name, Consumer* consumer);
@@ -43,24 +43,29 @@ public:
     virtual inline double getCurrentConsumptionP(){return currentConsumptionP;}
     virtual inline double getCurrentConsumptionQ(){return currentConsumptionQ;}
     virtual inline double getCurrentConsumptionS(){return currentConsumptionS;}
-
+    virtual inline double getSumRint() const {return SumRint;}
 protected:
     int busU={0},busF={0}; //напряжение и частота на шинах ГРУ
     double PnomSources={0}, QnomSources={0}, SnomSources={0};//номинальные мощности источников, подключенных к шинам
     double Preserv={0},Qreserv={0},Sreserv={0};//резерв мощности на шинах ГРУ
     double currentConsumptionP={0}, currentConsumptionQ={0}, currentConsumptionS={0};//текущая потребляемая с шин мощность
-    double SumRint={0}; //суммарное внутреннее сопротивление всех источников на шинах
+    double SumRint={0};
+
+
+protected:
+    //суммарное внутреннее сопротивление всех источников на шинах
     int amountOfConnectedSources={0}; //количество источников подключенных к шинам ГРУ
     std::map<std::string, Source*> sources;
     std::map<std::string, Consumer*> consumers;
 
-    void computeSourcesUandF(unsigned int dTime);//вычисляет напряжение и частоту на источниках, до выравнивания в ГРУ
+    void computeSourcesUandF(std::chrono::milliseconds dTime);//вычисляет напряжение и частоту на источниках, до выравнивания в ГРУ
     void computeBusVoltage();//вычисляем напряжение на шинах
     void setBusVoltageToAll();//выстявляем общее напряжение для всего, что подключено к ГРУ
     void computeBusFrequency();//вычисляем частоту на шинах ГРУ
     void setBusFrequencyToAll();//выстявляем общую частоту для всего, что подключено к ГРУ
     void computeCurrentGRUPconsumptions();//вычисляем текущую потребляемую мощность на ГРУ
-    void devideConsumptedPowerBetweenGenerators(unsigned int dTime);//вычисляем мощность производимую всеми источниками
+    void devideConsumptedPowerBetweenGenerators(std::chrono::milliseconds dTime);//вычисляем мощность производимую всеми источниками
+    void computeSumRint(std::chrono::milliseconds dTime);//вычисляем суммарное сопротивление источников подключенных к ГРУ
     void computeNominalSourceP();//вычисляем номинальную мощность подключенных к ГРУ источников
     void computePowerReserv();//расчитываем резервы мощностей на шинах ГРУ
 };
