@@ -5,7 +5,8 @@ set(Test1_SOURCE_FILES tests.cpp AbstractElModel_Test.cpp AbstractElModel_Test.h
         PI_Test.cpp PI_Test.h
         DG_Test.cpp DG_Test.h
         SimpleDrive_Test.cpp SimpleDrive_Test.h
-        Q_Test.cpp Q_Test.h)
+        Q_Test.cpp Q_Test.h
+        Consumer_Test.cpp Consumer_Test.h)
 
 add_executable(test1 ${Test1_SOURCE_FILES})
 target_link_libraries(test1 gtest gmock libelectricity)

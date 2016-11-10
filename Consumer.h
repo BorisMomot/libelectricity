@@ -6,7 +6,6 @@
 #define LIBELECTRICITY_CONSUMER_H
 
 #include "AbstractElModel.h"
-#include <chrono>
 
 class Consumer: public AbstractElModel
 {
