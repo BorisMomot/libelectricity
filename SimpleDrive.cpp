@@ -23,7 +23,7 @@ void SimpleDrive::calculate(std::chrono::milliseconds dTime) {
     }
     else {
         RPM = 0;
-        resetParameterToZero();
+        resetParametersToZero();
     }
 }
 

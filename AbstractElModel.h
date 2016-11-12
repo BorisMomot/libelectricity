@@ -4,6 +4,12 @@
 
 #ifndef LIBELECTRICITY_ABSTRACTELMODEL_H
 #define LIBELECTRICITY_ABSTRACTELMODEL_H
+/**
+ * \brief Класс абстрактной электрической модели, содержит много электрических параметров
+ * Задумывался как интерфейс для большинства электрических моделей
+ * В классе расчитывается большое количество электрических параметров, верных для большинства электрических моделей
+ * Расчитываются фазные токи, линейные напряжения, фазные мощности по примитивным формулам.
+ */
 
 #include "AbstractModel.h"
 
@@ -11,9 +17,29 @@ class AbstractElModel: public AbstractModel
 {
 public:
     AbstractElModel();
+    /**
+     * Установить для модели текущую активную мощность
+     * @param power - задаваемая активная мощность
+     * @return - если в текущем состоянии можно задать мощность для модели, в противном случае выставление мощности будет проигнорировано
+     */
     virtual inline bool setP(double power);
+    /**
+     * Установить для модели текущую реактивную мощность
+     * @param reactpower - задаваемая реактивная мощность
+     * @return - если в текущем состоянии можно задать мощность для модели, в противном случае выставление мощности будет проигнорировано
+     */
     virtual inline bool setQ(double reactpower);
+    /**
+     * Установить для модели частоту наряжения
+     * @param frequency - задаваемая частота
+     * @return - если в текущем состоянии можно задать частоту для модели, в противном случае выставление частоты будет проигнорировано
+     */
     virtual inline bool setF(unsigned int frequency);
+    /**
+     * Установить для модели наряжение
+     * @param voltage - задаваемое напряжение
+     * @return - если в текущем состоянии можно задать напряжение для модели, в противном случае выставление напряжения будет проигнорировано
+     */
     virtual inline bool setU(unsigned int voltage);
 
     virtual inline bool connectToGRU(){isConnected = true; return true;}
@@ -43,24 +69,40 @@ public:
     virtual inline double getUc(){return Uc;}
     double getUbus() const { return Ubus; }
     double getFbus() const { return Fbus; }
-    void setUbus(double Ubus) { AbstractElModel::Ubus = Ubus; }
-    void setFbus(double Fbus) { AbstractElModel::Fbus = Fbus; }
+    virtual void setUbus(double Ubus) { AbstractElModel::Ubus = Ubus; }
+    virtual void setFbus(double Fbus) { AbstractElModel::Fbus = Fbus; }
 
+    /**
+     * Расчитывает на основании P, Q, полную мощность S и мощности по фазам
+     */
     virtual void calculatePowers();
+    /**
+     * Расчитывает на основании I токи по фазам
+     */
     virtual void calculateCurrents();
 
     virtual void precalculate(std::chrono::milliseconds dTime) override {}
-    virtual void calculate(std::chrono::milliseconds dTime) override;
+    /**
+     * Расчитывает calculatePowers и calculateCurrents
+     * @param dTime
+     */
+    virtual void calculate(std::chrono::milliseconds dTime) override; //todo подумать насчет вынесения интерфейса и дефолтной логике автомата в этот класс
     virtual void aftercalculation(std::chrono::milliseconds dTime) override {}
 
     virtual ~AbstractElModel() = 0;
 protected:
-    virtual void resetParameterToZero();
+    virtual void resetParametersToZero();
     double P={0},Q={0},S={0};
     double Pa,Pb,Pc,Qa,Qb,Qc,Sa,Sb,Sc;
     double f={0},I={0},U={0};
     double Ia,Ib,Ic,Ua,Ub,Uc;
-    bool isConnected={false}; //подключен ли потребитель к шинам ГРУ
+    /**
+     * подключен ли потребитель к шинам ГРУ
+     */
+    bool isConnected={false};
+    /**
+     * напряжение и частота на шинах ГРУ к которым предполагается подключать данную модель
+     */
     double Ubus={0}, Fbus={0};//напряжение и частота на шинах
 };
 

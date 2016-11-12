@@ -21,7 +21,7 @@ void Consumer::calculate(std::chrono::milliseconds dTime)
         calculateCurrents();
     }
     else {
-        resetParameterToZero();
+        resetParametersToZero();
     }
 }
 
