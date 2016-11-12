@@ -36,11 +36,30 @@ public:
     double getKp(){ return pi.getKp();}
     double getTi(){ return pi.getTi();}
 protected:
+    /**
+     * расчитать инерцию ДГ (расчитывается на основании мощности генератора, причем достаточно приблизительно)
+     */
 	inline void computeJ(); //
-	void computeFuelFlow(std::chrono::milliseconds dTime); //расчет уровня топлива подаваемого в дизель (ПИД регулятор)
-	void computeMdv(std::chrono::milliseconds dTime); //расчет момента дизеля
-	void computeMnagr(std::chrono::milliseconds dTime); //расчет текущего момента нагрузки
-	void computeRPM(std::chrono::milliseconds dTime); //расчет текущей скорости вращения ДГ
+    /**
+     * расчет уровня топлива подаваемого в дизель (с помощью ПИД регулятора)
+     * @param dTime - промежуток времени с момента предыдущего вызова функции
+     */
+	void computeFuelFlow(std::chrono::milliseconds dTime);
+    /**
+     * расчет момента дизеля
+     * @param dTime - промежуток времени с момента предыдущего вызова функции
+     */
+	void computeMdv(std::chrono::milliseconds dTime);
+    /**
+     * расчет текущего момента нагрузки
+     * @param dTime - промежуток времени с момента предыдущего вызова функции
+     */
+	void computeMnagr(std::chrono::milliseconds dTime);
+    /**
+     * расчет текущей скорости вращения ДГ
+     * @param dTime - промежуток времени с момента предыдущего вызова функции
+     */
+	void computeRPM(std::chrono::milliseconds dTime);
 
 	/**
 	 * Внутренний ПИ-регулятор для рассчета подачи топлива в дизель
@@ -50,14 +69,34 @@ protected:
 	 * момент инерции ДГ
 	 */
 	double J = {0};
-
-	double FuelFlow = {0}; //подача топлива
-	double FuelFlow_ps = {0}; //подача топлива на предыдущем шаге
-	double Mdv = {0}; //момент дизеля
-	double Mdv_ps = {0}; //момент дизеля на предыдущем шаге
-	double Mnagr = {0}; //момент нагрузки от генератора
-	double RPM = {0}; //скорость вращения ДГ
-	double RPM_ps = {0}; //скорость вращения ДГ на предыдущем шаге
+    /**
+     * подача топлива
+     */
+	double FuelFlow = {0};
+    /**
+     * подача топлива во время предыдущего вызова функции расчета
+     */
+	double FuelFlow_ps = {0};
+    /**
+     * момент дизеля
+     */
+	double Mdv = {0};
+    /**
+     * момент дизеля во время предыдущего вызова функции расчета
+     */
+	double Mdv_ps = {0};
+    /**
+     * момент нагрузки от генератора
+     */
+	double Mnagr = {0};
+    /**
+     * текущая скорость вращения дизеля в оборотах в минуту
+     */
+	double RPM = {0};
+    /**
+     * скоростть вращения дизеля во время предыдущего вызова функции расчета
+     */
+	double RPM_ps = {0};
 };
 
 
