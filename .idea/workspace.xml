@@ -19,8 +19,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f50b9aa4-c180-4a7e-b8e5-6a679913c50c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DG.h" afterPath="$PROJECT_DIR$/DG.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GRU.h" afterPath="$PROJECT_DIR$/GRU.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GRU_functions.h" afterPath="$PROJECT_DIR$/GRU_functions.h" />
     </list>
     <ignored path="libelectricity.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,7 +43,7 @@
       <file leaf-file-name="AbstractModel.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AbstractModel.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="0">
               <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
               <folding />
             </state>
@@ -63,18 +63,40 @@
       <file leaf-file-name="DG.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DG.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
+            <state relative-caret-position="1062">
               <caret line="59" column="77" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GRU.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GRU.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GRU.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="89" column="78" selection-start-line="89" selection-start-column="78" selection-end-line="89" selection-end-column="78" />
+            <state relative-caret-position="-585">
+              <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelRunner.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ModelRunner.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+              <folding>
+                <element signature="e#115#131#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PID.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PID.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -138,26 +160,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DG_Test.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/DG_Test.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -176,7 +178,6 @@
         <option value="$PROJECT_DIR$/LoadDivider.cpp" />
         <option value="$PROJECT_DIR$/ActiveLoadDivider.h" />
         <option value="$PROJECT_DIR$/ActiveLoadDivider.cpp" />
-        <option value="$PROJECT_DIR$/GRU_functions.h" />
         <option value="$PROJECT_DIR$/tests/PI_Test.h" />
         <option value="$PROJECT_DIR$/tests/DG_Test.h" />
         <option value="$PROJECT_DIR$/tests/SourceModel_Test.cpp" />
@@ -220,6 +221,7 @@
         <option value="$PROJECT_DIR$/Consumer.h" />
         <option value="$PROJECT_DIR$/DG.h" />
         <option value="$PROJECT_DIR$/GRU.h" />
+        <option value="$PROJECT_DIR$/GRU_functions.h" />
       </list>
     </option>
   </component>
@@ -550,7 +552,8 @@
       <workItem from="1478720297459" duration="4185000" />
       <workItem from="1478805724657" duration="6124000" />
       <workItem from="1478955790771" duration="5707000" />
-      <workItem from="1478985479912" duration="1925000" />
+      <workItem from="1478985479912" duration="2490000" />
+      <workItem from="1479042370912" duration="1474000" />
     </task>
     <task id="LOCAL-00001" summary="Написал тесты для распределения нагрузки и вычисления внутреннего сопротивления.">
       <created>1476912928133</created>
@@ -657,7 +660,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478961584555</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Продолжение написания документации">
+      <created>1478987417880</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1478987417880</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -693,7 +703,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134313000" />
+    <option name="totallyTimeSpent" value="136352000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -762,13 +772,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GRU_functions.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/math.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -860,20 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LoadDivider.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LoadDivider.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/GRU_Test.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -885,9 +874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <marker date="1478634610761" expanded="true" signature="201:2441" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,13 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PID.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -1005,16 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModelRunner.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-          <folding>
-            <element signature="e#115#131#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ModelRunner.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -1061,7 +1030,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AbstractModel.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="0">
           <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
           <folding />
         </state>
@@ -1118,7 +1087,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DG.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
+        <state relative-caret-position="1062">
           <caret line="59" column="77" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
           <folding />
         </state>
@@ -1150,10 +1119,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GRU_functions.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LoadDivider.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LoadDivider.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GRU.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="89" column="78" selection-start-line="89" selection-start-column="78" selection-end-line="89" selection-end-column="78" />
+        <state relative-caret-position="-585">
+          <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModelRunner.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding>
+            <element signature="e#115#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PID.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
           <folding />
         </state>
       </provider>

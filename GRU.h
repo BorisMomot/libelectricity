@@ -93,20 +93,60 @@ protected:
 
 
 protected:
-    //суммарное внутреннее сопротивление всех источников на шинах
-    int amountOfConnectedSources={0}; //количество источников подключенных к шинам ГРУ
+    /**
+     * количество подключенных к шинам ГРУ источников электрических энергии
+     */
+    int amountOfConnectedSources={0};
+    /**
+     * Мапы источников, которые могут быть подключены к ГРУ
+     */
     std::map<std::string, Source*> sources;
+    /**
+     * Мапы потребителей, которые могут быть подключены к ГРУ
+     */
     std::map<std::string, Consumer*> consumers;
-
-    void computeSourcesUandF(std::chrono::milliseconds dTime);//вычисляет напряжение и частоту на источниках, до выравнивания в ГРУ
-    void computeBusVoltage();//вычисляем напряжение на шинах
-    void setBusVoltageToAll();//выстявляем общее напряжение для всего, что подключено к ГРУ
-    void computeBusFrequency();//вычисляем частоту на шинах ГРУ
-    void setBusFrequencyToAll();//выстявляем общую частоту для всего, что подключено к ГРУ
-    void computeCurrentGRUPconsumptions();//вычисляем текущую потребляемую мощность на ГРУ
-    void devideConsumptedPowerBetweenGenerators(std::chrono::milliseconds dTime);//вычисляем мощность производимую всеми источниками
-    void computeSumRint(std::chrono::milliseconds dTime);//вычисляем суммарное сопротивление источников подключенных к ГРУ
-    void computeNominalSourceP();//вычисляем номинальную мощность подключенных к ГРУ источников
-    void computePowerReserv();//расчитываем резервы мощностей на шинах ГРУ
+    /**
+     * вычисляет напряжение и частоту на источниках, до выравнивания в ГРУ
+     * @param dTime - время с момента последнего вызова функции
+     */
+    void computeSourcesUandF(std::chrono::milliseconds dTime);
+    /**
+     * вычислить напряжение на шинах ГРУ
+     */
+    void computeBusVoltage();
+    /**
+     * выставить напряжение ГРУ для всех источников и потребителей подключенных к шинам
+     */
+    void setBusVoltageToAll();
+    /**
+     * вычислить частоту на шинах ГРУ
+     */
+    void computeBusFrequency();
+    /**
+     * выставить частоту ГРУ для всех источников и потребителей подключенных к шинам
+     */
+    void setBusFrequencyToAll();
+    /**
+     * вычисляем суммарную потребляемую мощность с шин ГРУ
+     */
+    void computeCurrentGRUPconsumptions();
+    /**
+     * вычисленную потребляемую мощность делим между источниками
+     * @param dTime - время с момента последнего вызова функции
+     */
+    void devideConsumptedPowerBetweenGenerators(std::chrono::milliseconds dTime);
+    /**
+     * вычисляем суммарное сопротивление источников подключенных к ГРУ
+     * @param dTime - время с момента последнего вызова функции
+     */
+    void computeSumRint(std::chrono::milliseconds dTime);
+    /**
+     * вычисляем суммарную номинальную мощность для всех источников подключенных к шинам ГРУ
+     */
+    void computeNominalSourceP();
+    /**
+     * вычисляем резерв мощности на шинах ГРУ
+     */
+    void computePowerReserv();//
 };
 #endif //LIBELECTRICITY_GRU_H
