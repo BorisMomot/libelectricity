@@ -14,7 +14,10 @@ set(SOURCE_FILES_LIBELECTRICITY
 		SimpleDrive.cpp SimpleDrive.h
 		Q.cpp Q.h
 		Q_withDisc.cpp Q_withDisc.h
-		ModelRunner.cpp ModelRunner.h)
+		ModelRunner.cpp ModelRunner.h
+		Drive.cpp Drive.h
+		Propeller.cpp Propeller.h
+		ShipOnRails.cpp ShipOnRails.h)
 
 add_library(libelectricity STATIC ${SOURCE_FILES_LIBELECTRICITY})
 
