@@ -35,7 +35,7 @@ void GRU::calculate(chrono::milliseconds dTime) {
 }
 
 void GRU::computeSourcesUandF(std::chrono::milliseconds dTime) {
-    auto compUandF = [dTime] (Source* source) {source->calculateSourceF(dTime);};
+    auto compUandF = [dTime] (Source* source) { source->computeSourceF(dTime);};
     doSmthWithMapValues(sources, compUandF);
 }
 

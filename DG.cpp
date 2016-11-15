@@ -7,8 +7,8 @@ DG::DG(unsigned int Pnominal, unsigned int Qnominal, unsigned int Unominal) : So
     computeJ();
 }
 
-void DG::calculateSourceF(std::chrono::milliseconds dTime) {
-    Source::calculateSourceF(dTime);
+void DG::computeSourceF(std::chrono::milliseconds dTime) {
+	Source::computeSourceF(dTime);
 
     computeFuelFlow(dTime);
     computeMdv(dTime);

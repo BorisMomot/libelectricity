@@ -21,7 +21,7 @@ TEST_F(RintCalculator_Test, testWithoutFTarget) {
     int Unom = 400;
     RintCalculator rCalc(Pnom, Unom);
     int Pcurrent = 1000000;
-    EXPECT_DOUBLE_EQ(rCalc.calculatesinFi(std::chrono::milliseconds(1), Pcurrent, 50, 50), (double)Pcurrent/4/Pnom);
+    EXPECT_DOUBLE_EQ(rCalc.computeSinFi(std::chrono::milliseconds(1), Pcurrent, 50, 50), (double)Pcurrent/4/Pnom);
 }
 TEST_F(RintCalculator_Test, testWithFTarget) {
     int Pnom = 2000000;
@@ -29,7 +29,7 @@ TEST_F(RintCalculator_Test, testWithFTarget) {
     RintCalculator rCalc(Pnom, Unom);
     int Pcurrent = 1000000;
     int fTarget = 50, fCurrent = 49;
-    EXPECT_DOUBLE_EQ(rCalc.calculatesinFi(std::chrono::milliseconds(1), Pcurrent, fTarget, fCurrent), (double)Pcurrent/4/Pnom - (double)(fTarget-fCurrent)*1/1000 );
+    EXPECT_DOUBLE_EQ(rCalc.computeSinFi(std::chrono::milliseconds(1), Pcurrent, fTarget, fCurrent), (double)Pcurrent/4/Pnom - (double)(fTarget-fCurrent)*1/1000 );
     fCurrent = 51;
-    EXPECT_DOUBLE_EQ(rCalc.calculatesinFi(std::chrono::milliseconds(1), Pcurrent, fTarget, fCurrent), (double)Pcurrent/4/Pnom - (double)(fTarget-fCurrent)*1/1000 );
+    EXPECT_DOUBLE_EQ(rCalc.computeSinFi(std::chrono::milliseconds(1), Pcurrent, fTarget, fCurrent), (double)Pcurrent/4/Pnom - (double)(fTarget-fCurrent)*1/1000 );
 }

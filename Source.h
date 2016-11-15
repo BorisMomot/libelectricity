@@ -4,8 +4,10 @@
 
 #ifndef LIBELECTRICITY_SOURCE_H
 #define LIBELECTRICITY_SOURCE_H
-
-
+/**
+ * \brief Максимально простой источник электрической энергии. А так же интерфейс для более сложных источников
+ * За один расчет отрабатывает задание по частоте и уровню напряжения
+ */
 #include "AbstractElModel.h"
 #include "RintCalculator.h"
 
@@ -23,10 +25,20 @@ public:
     virtual inline bool getIsStarted(){return isStarted;}
     virtual bool stopSource();
 
-    virtual void calculateSourceU(std::chrono::milliseconds dTime);
-    virtual void calculateSourceF(std::chrono::milliseconds dTime);
+    virtual void computeSourceU(std::chrono::milliseconds dTime);
+    virtual void computeSourceF(std::chrono::milliseconds dTime);
 
-    virtual bool setF(unsigned int frequency) override;
+    /**
+     * Вызывается ГРУ для выставления единой частоты на шинах для всех источников
+     * @param frequency - частота
+     * @return - true если удачно
+     */
+	virtual bool setF(unsigned int frequency) override;
+	/**
+	 * Вызывается ГРУ для выставления единого напряжения на шинах для всех источников
+	 * @param voltage - напряжение
+	 * @return - true если удачно
+	 */
     virtual bool setU(unsigned int voltage) override;
     virtual inline bool setTargetU(unsigned int Utarget){targetU = Utarget; return true;}
     virtual inline bool setTargetF(unsigned int Ftarget){targetF = Ftarget; return true;}
@@ -47,13 +59,34 @@ public:
 
     bool setRCalculator(RintCalculator* Rcalc);
 protected:
-    double Pnom, Qnom, Snom; //номинальные мощности источника
-    double Unom; //номинальное напряжение источника
-    double targetU, targetF={50}; //заданные системе управления источником эл. энергии задания по частоте и напряжению
-    double Rinternal; //внутреннее сопротивление источника
+	/**
+	 * номинальные мощности источника
+	 */
+    double Pnom, Qnom, Snom;
+	/**
+	 * номинальное напряжение источника
+	 */
+    double Unom;
+	/**
+	 * заданные системе управления источником эл. энергии задания по частоте и напряжению
+	 */
+    double targetU, targetF={50};
+	/**
+	 * внутреннее сопротивление источника
+	 */
+    double Rinternal;
+	/**
+	 * признак, что текущая мощность больше номинальной мощности источника
+	 */
     bool isOverLoaded = {false};
+	/**
+	 * признак, что источник запущен
+	 */
     bool isStarted;
-    RintCalculator *internalRcalculator;//ссылка на объект, который будет рассчитывать внутреннее сопротивление источника
+	/**
+	 * ссылка на объект, который будет рассчитывать внутреннее сопротивление источника
+	 */
+    RintCalculator *internalRcalculator;
 };
 
 

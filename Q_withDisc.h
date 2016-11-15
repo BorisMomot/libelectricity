@@ -4,7 +4,10 @@
 
 #ifndef LIBELECTRICITY_Q_WITHDISC_H
 #define LIBELECTRICITY_Q_WITHDISC_H
-
+/**
+ * \brief Выключатель с блокировкой включения по напряжению и частоте
+ * По умолчанию пороги отключения задаются равными 0. Но можно установить разные.
+ */
 #include "Q.h"
 
 class Q_withDisc: public Q {
@@ -14,7 +17,10 @@ public:
     double getUborder() const {        return Uborder;    }
     double getFborder() const {        return Fborder;    }
 protected:
-    double Uborder, Fborder; //пороговые значения при которых выключатель не включается
+	/**
+	 * пороговые значения при которых выключатель не включается
+	 */
+    double Uborder, Fborder;
 };
 
 

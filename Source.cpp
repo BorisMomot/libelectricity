@@ -18,7 +18,7 @@ void Source::calculate(std::chrono::milliseconds dTime)
 {
     calculatePowers();
     calculateCurrents();
-    Rinternal = internalRcalculator->calculateRinternal(dTime, P, targetF, f); //расчитываем внутреннее сопротивление источника
+    Rinternal = internalRcalculator->computeRinternal(dTime, P, targetF, f); //расчитываем внутреннее сопротивление источника
 }
 
 bool Source::stopSource()
@@ -139,15 +139,15 @@ bool Source::setRCalculator(RintCalculator *Rcalc) {
     }
 }
 
-void Source::calculateSourceU(std::chrono::milliseconds dTime) {
+void Source::computeSourceU(std::chrono::milliseconds dTime) {
     U = Ua = Ub = Uc = targetU;
 }
 
-void Source::calculateSourceF(std::chrono::milliseconds dTime) {
+void Source::computeSourceF(std::chrono::milliseconds dTime) {
     U = Ua = Ub = Uc = targetU;
 }
 
 double Source::computeRinternal(std::chrono::milliseconds dTime) {
-    Rinternal = internalRcalculator->calculateRinternal(dTime, P, targetF, f);
+    Rinternal = internalRcalculator->computeRinternal(dTime, P, targetF, f);
     return Rinternal;
 }

@@ -23,7 +23,7 @@ public:
 	DG(unsigned int Pnominal, unsigned int Qnominal, unsigned int Unominal=400);
 	virtual ~DG(){}
 
-	virtual void calculateSourceF(std::chrono::milliseconds dTime) override;
+	virtual void computeSourceF(std::chrono::milliseconds dTime) override;
 
 	double getJ() const { return J; }
 	double getFuelFlow() const { return FuelFlow; }

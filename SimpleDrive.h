@@ -4,7 +4,12 @@
 
 #ifndef LIBELECTRICITY_SIMPLEDRIVE_H
 #define LIBELECTRICITY_SIMPLEDRIVE_H
-
+/**
+ * \brief Максимально упрощенная модель привода
+ * За один проход выставляет текущую скорость вращения равной заданию. Управляется только по скорости вращения.
+ * Текущая мощность расчитывается на основании формулы:
+ * P = k * RPM^3
+ */
 #include "Consumer.h"
 
 class SimpleDrive: public Consumer {
@@ -19,11 +24,22 @@ public:
     inline double getK() const { return k; }
 
 protected:
-    void computeDrivePowers();
+    /**
+     * функция для расчета текущей мощности привода на основе задания текущего задания по скорости
+     */
+	void computeDrivePowers();
+	/**
+	 * задание на скорость вращения
+	 */
     int targetRPM = {0};
+	/**
+	 * текущие обороты привода
+	 */
     int RPM = {0};
-    double k = {0}; //Наклон нагрузочной характеристики привода
+	/**
+	 * наклон нагрузочной характеристики привода
+	 */
+    double k = {0};
 };
-
 
 #endif //LIBELECTRICITY_SIMPLEDRIVE_H
