@@ -24,6 +24,13 @@ add_library(libelectricity STATIC ${SOURCE_FILES_LIBELECTRICITY})
 
 add_subdirectory(googletest)
 add_subdirectory(tests)
+add_subdirectory(Base)
+add_subdirectory(Consumers)
+add_subdirectory(GRU)
+add_subdirectory(Ships)
+add_subdirectory(Sources)
+
+
 
 set(SOURCE_FILES main.cpp)
 add_executable(libelectricity_run ${SOURCE_FILES})

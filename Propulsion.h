@@ -4,7 +4,10 @@
 
 #ifndef LIBELECTRICITY_PROPULSION_H
 #define LIBELECTRICITY_PROPULSION_H
-
+/**
+ * \brief Модель пропульсивной уставновки. Самой простой.
+ * Обсчитывает пару двишатель-винт, на основании скорости полученной от модели судна
+ */
 #include "AbstractModel.h"
 #include "Drive.h"
 #include "Propeller.h"
