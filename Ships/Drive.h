@@ -4,7 +4,11 @@
 
 #ifndef LIBELECTRICITY_DRIVE_H
 #define LIBELECTRICITY_DRIVE_H
-
+/**
+ * \brief Простая модель двигателя.
+ * На основании ошибки в задании скорости вращения и текущей скорости вращения
+ * расчитывает выходной момент
+ */
 #include "Consumer.h"
 #include "PID.h"
 

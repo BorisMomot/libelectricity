@@ -4,7 +4,11 @@
 
 #ifndef LIBELECTRICITY_PROPELLER_H
 #define LIBELECTRICITY_PROPELLER_H
-
+/**
+ * \brief Модель винта
+ * На основании скорости движения судна и момента от двигателя расчитывает текущую скорость
+ * вращения
+ */
 #include "AbstractModel.h"
 class Propeller: public AbstractModel {
 public:
