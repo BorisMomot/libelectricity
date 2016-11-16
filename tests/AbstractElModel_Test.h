@@ -6,7 +6,7 @@
 #define LIBELECTRICITY_ABSTRACTELMODEL_TEST_H
 
 #include <gtest/gtest.h>
-#include "../AbstractElModel.h"
+#include "AbstractElModel.h"
 //#include <libelectricity/AbstractElModel.h>
 
 class ConcreteAbstractElModel: public AbstractElModel{

@@ -7,7 +7,7 @@
 
 
 #include <gtest/gtest.h>
-#include "../PID.h"
+#include "PID.h"
 
 class PI_Test: public testing::Test {
 public:

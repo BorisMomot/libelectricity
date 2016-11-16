@@ -1,9 +1,6 @@
 #include <iostream>
 #include "GRU.h"
 #include "ModelRunner.h"
-#include <chrono>
-#include <thread>
-#include <future>
 
 using namespace std;
 

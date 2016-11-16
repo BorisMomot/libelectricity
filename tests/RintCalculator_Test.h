@@ -6,7 +6,7 @@
 #define LIBELECTRICITY_RINTCALCULATOR_TEST_H
 
 #include <gtest/gtest.h>
-#include "../RintCalculator.h"
+#include "RintCalculator.h"
 #include <chrono>
 class RintCalculator_Test: public testing::Test {
 public:

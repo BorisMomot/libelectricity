@@ -6,7 +6,7 @@
 #define LIBELECTRICITY_DG_TEST_H
 
 #include <gtest/gtest.h>
-#include "../DG.h"
+#include "DG.h"
 
 class DG_Test: public testing::Test {
 public:

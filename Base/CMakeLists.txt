@@ -1,3 +1,6 @@
-set(libBase_SOURCE_FILES Ba.h Ba.cpp)
+set(libBase_SOURCE_FILES AbstractModel.cpp AbstractElModel.h
+		Convinience_functions.h
+		AbstractElModel.cpp AbstractElModel.h
+		PID.cc PID.h)
 
-add_library(libBase ${libBase_SOURCE_FILES})
+add_library(Base ${libBase_SOURCE_FILES})

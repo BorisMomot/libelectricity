@@ -1,5 +1,7 @@
-set(libConsumers_SOURCE_FILES Co.h Co.cpp)
+set(libConsumers_SOURCE_FILES
+		Consumer.cpp Consumer.h
+		SimpleDrive.cpp SimpleDrive.h)
 
-add_library(libConsumers ${libConsumers_SOURCE_FILES})
 include_directories(${CMAKE_SOURCE_DIR}/Base)
-target_link_libraries(libConsumers STATIC libBase)
+add_library(Consumers ${libConsumers_SOURCE_FILES})
+target_link_libraries(Consumers Base)

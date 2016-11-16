@@ -6,7 +6,7 @@
 #define LIBELECTRICITY_SIMPLEDRIVE_TEST_H
 
 #include <gtest/gtest.h>
-#include "../SimpleDrive.h"
+#include "SimpleDrive.h"
 
 class SimpleDrive_Test: public testing::Test {
 public:

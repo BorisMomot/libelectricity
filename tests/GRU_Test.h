@@ -5,7 +5,7 @@
 #ifndef LIBELECTRICITY_GRU_TEST_H
 #define LIBELECTRICITY_GRU_TEST_H
 #include <gtest/gtest.h>
-#include "../GRU.h"
+#include "GRU.h"
 
 class GRU_Test: public ::testing::Test {
 public:

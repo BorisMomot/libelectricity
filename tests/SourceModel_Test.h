@@ -6,7 +6,7 @@
 #define LIBELECTRICITY_SOURCEMODEL_TEST_H
 
 #include <gtest/gtest.h>
-#include "../Source.h"
+#include "Source.h"
 
 class SourceModel_Test: public testing::Test {
 public:

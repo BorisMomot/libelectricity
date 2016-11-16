@@ -5,7 +5,7 @@
 #ifndef LIBELECTRICITY_LOADDIVIDER_TEST_H
 #define LIBELECTRICITY_LOADDIVIDER_TEST_H
 #include <gtest/gtest.h>
-#include "../LoadDivider.h"
+#include "LoadDivider.h"
 
 class LoadDivider_Test: public testing::Test {
 public:
