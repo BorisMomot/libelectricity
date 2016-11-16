@@ -9,3 +9,7 @@ Drive::Drive(unsigned int Pnominal, unsigned int Qnominal) : Consumer(Pnominal, 
 void Drive::calculate(std::chrono::milliseconds dTime) {
     Consumer::calculate(dTime);
 }
+
+double Drive::computeM(std::chrono::milliseconds dTime) {
+	return 0;
+}

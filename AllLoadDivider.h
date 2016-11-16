@@ -15,7 +15,7 @@
 #include <string>
 #include <map>
 #include "Source.h"
-#include "GRU_functions.h"
+#include "Convinience_functions.h"
 
 
 class AllLoadDivider {

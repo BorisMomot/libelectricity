@@ -23,6 +23,9 @@ public:
     double getF() const { return F; }
     double getV() const { return V; }
 
+	virtual double computeRPM(std::chrono::milliseconds dTime);
+	virtual double computeForce();
+
 protected:
     /**
      * Номинальная мощность системы

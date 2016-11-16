@@ -17,11 +17,16 @@ public:
     virtual void aftercalculation(std::chrono::milliseconds dTime) override { Consumer::aftercalculation(dTime); }
 
     double getTargetRPM() const { return targetRPM; }
-    double getRPM() const { return RPM; }
-    double getM() const { return M; }
+	double getRPM() const { return RPM; }
+	double getM() const { return M; }
 
-    void setTargetRPM(double targetRPM) { Drive::targetRPM = targetRPM; }
-    void setRPM(double RPM) { Drive::RPM = RPM; }
+	void setTargetRPM(double targetRPM) { Drive::targetRPM = targetRPM; }
+	void setRPM(double RPM) { Drive::RPM = RPM; }
+	/**
+	 * расчитываем момент привода
+	 * @return - возвращаем полученный момент привода
+	 */
+	virtual double computeM(std::chrono::milliseconds dTime);
 
 protected:
     PID pi;

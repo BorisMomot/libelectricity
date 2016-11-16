@@ -17,7 +17,7 @@
 #include "Source.h"
 #include "Consumer.h"
 #include "AllLoadDivider.h"
-#include "GRU_functions.h"
+#include "Convinience_functions.h"
 
 
 class GRU: public AbstractModel
