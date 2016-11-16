@@ -15,6 +15,11 @@ include_directories(${CMAKE_SOURCE_DIR}/Ships)
 include_directories(${CMAKE_SOURCE_DIR}/Sources)
 include_directories(${CMAKE_SOURCE_DIR}/Q)
 
+#add_subdirectory(Functioanal)
+#add_subdirectory(Integration)
+#add_subdirectory(Perfomance)
+#add_subdirectory(Stress)
+
 add_executable(test1 ${Test1_SOURCE_FILES})
 target_link_libraries(test1 gtest gmock
 		Base
