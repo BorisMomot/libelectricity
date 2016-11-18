@@ -2,7 +2,7 @@
 // Created by boris on 18.10.16.
 //
 #include <gtest/gtest.h>
-#include "AbstractElModel_Test.h"
+
 
 //#include "Test1.h"
 //#include "TestAbstractFactory.h"

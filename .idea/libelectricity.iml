@@ -22,31 +22,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Q/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Q/Q_withDisc.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Q/Q.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/Consumer_Test.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/SimpleDrive_Test.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/RintCalculator_Test.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/tests.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/SimpleDrive_Test.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/Q_Test.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/SourceModel_Test.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/PI_Test.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/PI_Test.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/Consumer_Test.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/GRU_Test.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/RintCalculator_Test.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/LoadDivider_Test.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/Q_Test.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/DG_Test.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/LoadDivider_Test.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/AbstractElModel_Test.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/GRU_Test.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/DG_Test.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/SourceModel_Test.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/AbstractElModel_Test.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ModelRunner.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ships/Propeller.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ships/Propeller.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ships/CMakeLists.txt" isTestSource="false" />
@@ -56,14 +31,39 @@
       <sourceFolder url="file://$MODULE_DIR$/Ships/Drive.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ships/Propulsion.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ships/Drive.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Base/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Base/AbstractModel.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Base/PID.cc" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Base/Convinience_functions.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Base/AbstractElModel.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Base/PID.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Base/AbstractModel.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Base/AbstractElModel.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/tests.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/PI/PI_Test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/PI/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/PI/PI_Test.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/SourceModel/SourceModel_Test.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/SourceModel/SourceModel_Test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/SourceModel/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/Consumer/Consumer_Test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/Consumer/Consumer_Test.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/Consumer/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/Q/Q_Test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/Q/Q_Test.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/Q/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/LoadDivider/LoadDivider_Test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/LoadDivider/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/LoadDivider/LoadDivider_Test.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/AbstractElModel/AbstractElModel_Test.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/AbstractElModel/AbstractElModel_Test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/AbstractElModel/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/SimpleDrive/SimpleDrive_Test.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/SimpleDrive/SimpleDrive_Test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/SimpleDrive/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/DG/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/DG/DG_Test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/DG/DG_Test.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/GRU/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/RintCalculator/RintCalculator_Test.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/RintCalculator/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/RintCalculator/RintCalculator_Test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GRU/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GRU/LoadDivider.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GRU/LoadDivider.h" isTestSource="false" />
@@ -71,6 +71,15 @@
       <sourceFolder url="file://$MODULE_DIR$/GRU/AllLoadDivider.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GRU/GRU.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GRU/GRU.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ModelRunner.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Base/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Base/AbstractElModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Base/PID.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Base/Convinience_functions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Base/AbstractModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Base/PID.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Base/AbstractModel.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Base/AbstractElModel.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Consumers/Consumer.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Consumers/Consumer.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Consumers/SimpleDrive.h" isTestSource="false" />
@@ -82,15 +91,15 @@
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
+          <root url="file:///usr/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-          <root url="file:///usr/include" />
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
+          <root url="file:///usr/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-          <root url="file:///usr/include" />
           <root url="file:///usr/local/include" />
         </SOURCES>
       </library>

@@ -1,33 +1,55 @@
-set(Test1_SOURCE_FILES tests.cpp AbstractElModel_Test.cpp AbstractElModel_Test.h SourceModel_Test.cpp SourceModel_Test.h
-        RintCalculator_Test.cpp RintCalculator_Test.h
-        LoadDivider_Test.cpp LoadDivider_Test.h
-        GRU_Test.cpp GRU_Test.h
-        PI_Test.cpp PI_Test.h
-        DG_Test.cpp DG_Test.h
-        SimpleDrive_Test.cpp SimpleDrive_Test.h
-        Q_Test.cpp Q_Test.h
-        Consumer_Test.cpp Consumer_Test.h)
+set(Test1_SOURCE_FILES
+		${CMAKE_SOURCE_DIR}/tests/Functional/AbstractElModel/AbstractElModel_Test.cpp
+		${CMAKE_SOURCE_DIR}/tests/Functional/AbstractElModel/AbstractElModel_Test.h
+		${CMAKE_SOURCE_DIR}/tests/Functional/SourceModel/SourceModel_Test.cpp
+		${CMAKE_SOURCE_DIR}/tests/Functional/SourceModel/SourceModel_Test.h
+		${CMAKE_SOURCE_DIR}/tests/Functional/RintCalculator/RintCalculator_Test.cpp
+		${CMAKE_SOURCE_DIR}/tests/Functional/RintCalculator/RintCalculator_Test.h
+		${CMAKE_SOURCE_DIR}/tests/Functional/LoadDivider/LoadDivider_Test.cpp
+		${CMAKE_SOURCE_DIR}/tests/Functional/LoadDivider/LoadDivider_Test.h
+#		${CMAKE_SOURCE_DIR}/tests/Functional/GRU/GRU_Test.cpp
+#		${CMAKE_SOURCE_DIR}/tests/Functional/GRU/GRU_Test.h
+		${CMAKE_SOURCE_DIR}/tests/Functional/PI/PI_Test.cpp
+		${CMAKE_SOURCE_DIR}/tests/Functional/PI/PI_Test.h
+		${CMAKE_SOURCE_DIR}/tests/Functional/DG/DG_Test.cpp
+		${CMAKE_SOURCE_DIR}/tests/Functional/DG/DG_Test.h
+		${CMAKE_SOURCE_DIR}/tests/Functional/SimpleDrive/SimpleDrive_Test.cpp
+		${CMAKE_SOURCE_DIR}/tests/Functional/SimpleDrive/SimpleDrive_Test.h
+		${CMAKE_SOURCE_DIR}/tests/Functional/Q/Q_Test.cpp
+		${CMAKE_SOURCE_DIR}/tests/Functional/Q/Q_Test.h
+		${CMAKE_SOURCE_DIR}/tests/Functional/Consumer/Consumer_Test.cpp
+		${CMAKE_SOURCE_DIR}/tests/Functional/Consumer/Consumer_Test.h
+		tests.cpp)
 
-include_directories(${CMAKE_SOURCE_DIR}/Base)
-include_directories(${CMAKE_SOURCE_DIR}/Consumers)
-include_directories(${CMAKE_SOURCE_DIR}/GRU)
-include_directories(${CMAKE_SOURCE_DIR}/Ships)
-include_directories(${CMAKE_SOURCE_DIR}/Sources)
-include_directories(${CMAKE_SOURCE_DIR}/Q)
+include_directories(${CMAKE_SOURCE_DIR}/tests/Functional/AbstractElModel/)
+include_directories(${CMAKE_SOURCE_DIR}/tests/Functional/Consumer/)
+include_directories(${CMAKE_SOURCE_DIR}/tests/Functional/DG/)
+include_directories(${CMAKE_SOURCE_DIR}/tests/Functional/GRU/)
+include_directories(${CMAKE_SOURCE_DIR}/tests/Functional/LoadDivider/)
+include_directories(${CMAKE_SOURCE_DIR}/tests/Functional/PI/)
+include_directories(${CMAKE_SOURCE_DIR}/tests/Functional/Q/)
+include_directories(${CMAKE_SOURCE_DIR}/tests/Functional/RintCalculator/)
+include_directories(${CMAKE_SOURCE_DIR}/tests/Functional/SimpleDrive/)
+include_directories(${CMAKE_SOURCE_DIR}/tests/Functional/SourceModel/)
 
-#add_subdirectory(Functioanal)
+
+
+
+add_subdirectory(Functional)
 #add_subdirectory(Integration)
 #add_subdirectory(Perfomance)
 #add_subdirectory(Stress)
 
 add_executable(test1 ${Test1_SOURCE_FILES})
 target_link_libraries(test1 gtest gmock
-		Base
-		Consumers
-		GRU
-		Ships
-		Sources
-		Q
-#		STATIC libelectricity
+		abstractModelTests
+		consumerTests
+		dgTests
+		gruTests
+		loadDividerTests
+		piTests
+		qTests
+		rintCalculatorTests
+		simpleDriveTests
+		sourceTests
 		)
-#target_include_directories(test1 PUBLIC libelectricity )
