@@ -11,7 +11,9 @@ AbstractElModel::AbstractElModel()
 
 bool AbstractElModel::setF(unsigned int frequency)
 {
-    if (isConnected && (U > 0))
+    bool isConnectedCached = isConnected;
+    double Ucached = U;
+    if (isConnectedCached && (Ucached > 0))
     {
         f = frequency;
         return true;
@@ -25,7 +27,9 @@ bool AbstractElModel::setF(unsigned int frequency)
 
 bool AbstractElModel::setP(double power)
 {
-    if (isConnected && (U > 0))
+    bool isConnectedCached = isConnected;
+    double Ucached = U;
+    if (isConnectedCached && (Ucached > 0))
     {
         P = power;
         return true;
@@ -39,7 +43,9 @@ bool AbstractElModel::setP(double power)
 
 bool AbstractElModel::setQ(double reactpower)
 {
-    if (isConnected && (U > 0))
+    bool isConnectedCached = isConnected;
+    double Ucached = U;
+    if (isConnectedCached && (Ucached > 0))
     {
         Q = reactpower;
         return true;
@@ -74,23 +80,33 @@ void AbstractElModel::calculate(std::chrono::milliseconds dTime)
 
 void AbstractElModel::calculatePowers()
 {
-    Pa=Pb=Pc=P/3;
-    Qa=Qb=Qc=Q/3;
-    S=sqrt(P*P + Q*Q);
-    Sa=Sb=Sc=S/3;
+    double Pcached = P;
+    double Qcached = Q;
+    double Pphase = Pcached/3;
+    double Qphase = Qcached/3;
+    Pa=Pb=Pc=Pphase;
+    Qa=Qb=Qc=Qphase;
+    double Scached = sqrt(Pcached*Pcached + Qcached*Qcached);
+    S = Scached;
+    double Sphase = Scached/3;
+    Sa=Sb=Sc=Sphase;
 }
 
 void AbstractElModel::calculateCurrents()
 {
-    if (U>0)
+    double Ucached = U;
+    double Scached = S;
+    double Icached;
+    if (Ucached>0)
     {
-        I=P/U;
+        Icached = Scached / Ucached;
     }
     else
     {
-        I=0;
+        Icached = 0;
     }
-    Ia=Ib=Ic=I/3;
+    I = Icached;
+    Ia=Ib=Ic=Icached/3;
 }
 
 AbstractElModel::~AbstractElModel(){}

@@ -53,13 +53,17 @@ bool Source::setU(unsigned int voltage)
     if (isStarted)
     {
         U = voltage;
-        Ua = Ub = Uc = U;
+        Ua = voltage;
+        Ub = voltage;
+        Uc = voltage;
         return true;
     }
     else
     {
         U = 0;
-        Ua = Ub = Uc = U;
+        Ua = 0;
+        Ub = 0;
+        Uc = 0;
         return false;
     }
 }

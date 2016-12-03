@@ -38,7 +38,8 @@ double PID::computeOutput(std::chrono::milliseconds dTime, double error) {
 	//защищаемся от переполнения
 	if (fabs(integrMismatch) < 1e300){
 		if (fabs(error) < 1e200) {
-			integrMismatch += error;
+			double t = integrMismatch + error;
+			integrMismatch = t;
 		}
 	}
 	else {

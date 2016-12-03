@@ -14,6 +14,7 @@
  * W(s) = Kp(1+1/(s*Ti))
  */
 #include <chrono>
+#include <atomic>
 
 class PID {
 public:
@@ -36,15 +37,15 @@ protected:
 	/**
 	 * Коэффициент усиления
 	 */
-	double Kp;
+	std::atomic<double> Kp = {0};
 	/**
 	 * Интегральная составляющая регулятора
 	 */
-	double Ti;
+	std::atomic<double> Ti = {1};
 	/**
 	 * Значение интегратора
 	 */
-	double integrMismatch = {0};
+	std::atomic<double> integrMismatch = {0};
 };
 
 

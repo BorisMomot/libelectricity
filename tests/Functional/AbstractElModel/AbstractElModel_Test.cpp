@@ -73,6 +73,7 @@ TEST_F(AbstractElModel_Test, test6000) {
     int f=50;
     int P=35000;
     int Q=1000;
+    double S = sqrt((double)P*(double)P + (double)Q*(double)Q);
     //проверяем задание
     EXPECT_TRUE(testElModel.connectToGRU());
     EXPECT_TRUE(testElModel.setU(U));
@@ -95,8 +96,8 @@ TEST_F(AbstractElModel_Test, test6000) {
     EXPECT_DOUBLE_EQ(testElModel.getSa(), (double)sqrt(P*P+Q*Q)/3);
     EXPECT_DOUBLE_EQ(testElModel.getSb(), (double)sqrt(P*P+Q*Q)/3);
     EXPECT_DOUBLE_EQ(testElModel.getSc(), (double)sqrt(P*P+Q*Q)/3);
-    EXPECT_DOUBLE_EQ(testElModel.getI(), (double)P/U);
-    EXPECT_DOUBLE_EQ(testElModel.getIa(), (double)P/U/3);
-    EXPECT_DOUBLE_EQ(testElModel.getIb(), (double)P/U/3);
-    EXPECT_DOUBLE_EQ(testElModel.getIc(), (double)P/U/3);
+    EXPECT_DOUBLE_EQ(testElModel.getI(), (double)S/U);
+    EXPECT_DOUBLE_EQ(testElModel.getIa(), (double)S/U/3);
+    EXPECT_DOUBLE_EQ(testElModel.getIb(), (double)S/U/3);
+    EXPECT_DOUBLE_EQ(testElModel.getIc(), (double)S/U/3);
 }

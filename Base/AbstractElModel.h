@@ -12,6 +12,7 @@
  */
 
 #include "AbstractModel.h"
+#include <atomic>
 
 class AbstractElModel: public AbstractModel
 {
@@ -92,10 +93,10 @@ public:
     virtual ~AbstractElModel() = 0;
 protected:
     virtual void resetParametersToZero();
-    double P={0},Q={0},S={0};
-    double Pa,Pb,Pc,Qa,Qb,Qc,Sa,Sb,Sc;
-    double f={0},I={0},U={0};
-    double Ia,Ib,Ic,Ua,Ub,Uc;
+    std::atomic<double> P={0},Q={0},S={0};
+    std::atomic<double> Pa={0},Pb={0},Pc={0},Qa={0},Qb={0},Qc={0},Sa={0},Sb={0},Sc={0};
+    std::atomic<double> f={0},I={0},U={0};
+    std::atomic<double> Ia={0},Ib={0},Ic={0},Ua={0},Ub={0},Uc={0};
     /**
      * подключен ли потребитель к шинам ГРУ
      */
