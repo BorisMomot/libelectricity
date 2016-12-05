@@ -35,27 +35,32 @@ bool PID::setTi(double Ti) {
 
 double PID::computeOutput(std::chrono::milliseconds dTime, double error) {
 	double output;
+    //кэшируемся, для потоко безопасности
+    double integrMismatchCached = integrMismatch;
+    double KpCached = Kp;
+    double TiCached = Ti;
 	//защищаемся от переполнения
-	if (fabs(integrMismatch) < 1e300){
+	if (fabs(integrMismatchCached) < 1e300){
 		if (fabs(error) < 1e200) {
-			double t = integrMismatch + error;
-			integrMismatch = t;
+			double t = integrMismatchCached + error;
+            integrMismatchCached = t;
 		}
 	}
 	else {
-		if (!signbit(integrMismatch)) {
-			integrMismatch = 1e300;
+		if (!signbit(integrMismatchCached)) {
+            integrMismatchCached = 1e300;
 		}
 		else {
-			integrMismatch = -1e300;
+            integrMismatchCached = -1e300;
 		}
 	}
-	if (Ti != 0) {
-		output = Kp * error + 1/Ti * Kp * dTime.count() * integrMismatch;
+	if (TiCached != 0) {
+		output = KpCached * error + 1/TiCached * KpCached * dTime.count() * integrMismatchCached;
 	}
 	else {
 		output = -1;
 	}
+    integrMismatch = integrMismatchCached;
 	return output;
 }
 

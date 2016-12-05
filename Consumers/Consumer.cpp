@@ -8,7 +8,7 @@
 Consumer::Consumer(unsigned int Pnominal, unsigned int Qnominal):
         Pnom(Pnominal), Qnom(Qnominal)
 {
-    Snom = sqrt (Pnom* Pnom + Qnom*Qnom);
+    Snom = sqrt (Pnom*Pnom + Qnom*Qnom);
 }
 
 void Consumer::calculate(std::chrono::milliseconds dTime)
