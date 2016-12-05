@@ -17,22 +17,24 @@ void MultithreadWorkTest::TearDown() {
 
 TEST_F(MultithreadWorkTest, IncDecrTest){
     ElModel model1;
-
-    auto incrFunc = [&model1] {
+    int count1{0}, count2{0};
+    auto incrFunc = [&model1, &count1] {
         std::mutex m1;
         for (int i = 0; i<100000; ++i ){
             m1.lock();
             model1.setUbus(model1.getUbus() + 1);
             m1.unlock();
+            ++count1;
         }
     };
 
-    auto decrFunc = [&model1] {
+    auto decrFunc = [&model1, &count2] {
         std::mutex m2;
         for (int i = 1; i<100000; ++i ){
             m2.lock();
             model1.setUbus(model1.getUbus() - 1);
             m2.unlock();
+            ++count2;
         }
     };
 
@@ -41,6 +43,9 @@ TEST_F(MultithreadWorkTest, IncDecrTest){
 
     f1.get();
     f2.get();
+
+    EXPECT_EQ(count1, 100000);
+    EXPECT_EQ(count2, 100000-1);
 
     EXPECT_DOUBLE_EQ(model1.getUbus(), 1);
 }
