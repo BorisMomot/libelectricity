@@ -17,23 +17,22 @@ void MultithreadWorkTest::TearDown() {
 
 TEST_F(MultithreadWorkTest, IncDecrTest){
     ElModel model1;
+    std::mutex m;
     int count1{0}, count2{0};
-    auto incrFunc = [&model1, &count1] {
-        std::mutex m1;
+    auto incrFunc = [&model1, &count1, &m] {
         for (int i = 0; i<100000; ++i ){
-            m1.lock();
+            m.lock();
             model1.setUbus(model1.getUbus() + 1);
-            m1.unlock();
+            m.unlock();
             ++count1;
         }
     };
 
-    auto decrFunc = [&model1, &count2] {
-        std::mutex m2;
+    auto decrFunc = [&model1, &count2, &m] {
         for (int i = 1; i<100000; ++i ){
-            m2.lock();
+            m.lock();
             model1.setUbus(model1.getUbus() - 1);
-            m2.unlock();
+            m.unlock();
             ++count2;
         }
     };
