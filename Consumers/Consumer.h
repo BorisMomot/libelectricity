@@ -35,7 +35,7 @@ protected:
     /**
      * номинальные мощности потребителя
      */
-    double Pnom, Qnom, Snom;
+    std::atomic<double> Pnom={0}, Qnom={0}, Snom={0};
 };
 
 
