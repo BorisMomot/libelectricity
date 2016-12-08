@@ -31,15 +31,15 @@ protected:
 	/**
 	 * задание на скорость вращения
 	 */
-    int targetRPM = {0};
+    std::atomic<int> targetRPM = {0};
 	/**
 	 * текущие обороты привода
 	 */
-    int RPM = {0};
+	std::atomic<int> RPM = {0};
 	/**
 	 * наклон нагрузочной характеристики привода
 	 */
-    double k = {0};
+	std::atomic<double> k = {0};
 };
 
 #endif //LIBELECTRICITY_SIMPLEDRIVE_H
