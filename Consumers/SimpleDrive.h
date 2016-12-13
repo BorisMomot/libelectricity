@@ -35,11 +35,11 @@ protected:
 	/**
 	 * текущие обороты привода
 	 */
-	std::atomic<int> RPM = {0};
+    std::atomic<int> RPM = {0};
 	/**
 	 * наклон нагрузочной характеристики привода
 	 */
-	std::atomic<double> k = {0};
+    std::atomic<double> k = {0};
 };
 
 #endif //LIBELECTRICITY_SIMPLEDRIVE_H

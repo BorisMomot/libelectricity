@@ -9,6 +9,7 @@
  * Ничего не проверяет - всегда включается и всегда выключается
  */
 #include "AbstractModel.h"
+#include <atomic>
 
 class Q : public AbstractModel {
 public:
@@ -32,7 +33,7 @@ protected:
 	/**
 	 * Внутреннее состояние - включен ли.
 	 */
-    bool isConnected={0};
+    std::atomic<bool> isConnected={0};
 };
 
 

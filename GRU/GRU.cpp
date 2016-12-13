@@ -81,7 +81,7 @@ void GRU::computeBusFrequency() {
 }
 
 void GRU::setBusVoltageToAll() {
-    auto busUcopy = busU;
+    int busUcopy = busU;
     auto USetter = [busUcopy] (AbstractElModel* model) {
         if (model->getIsConnected()){
             model->setU(busUcopy);
@@ -93,7 +93,7 @@ void GRU::setBusVoltageToAll() {
 }
 
 void GRU::setBusFrequencyToAll() {
-    auto busFCopy = busF;
+    int busFCopy = busF;
     auto FSetter = [busFCopy] (AbstractElModel* model) {
         if (model->getIsConnected()){
             model->setF(busFCopy);
@@ -105,13 +105,10 @@ void GRU::setBusFrequencyToAll() {
 }
 
 void GRU::computeCurrentGRUPconsumptions() {
-    currentConsumptionP=0;
-    currentConsumptionQ=0;
-    currentConsumptionS=0;
     //вычисляем общую потребляемую мощность
-    auto& currentConsumptionPCopy = currentConsumptionP;
-    auto& currentConsumptionQCopy = currentConsumptionQ;
-    auto& currentConsumptionSCopy = currentConsumptionS;
+    double currentConsumptionPCopy{0};
+    double currentConsumptionQCopy{0};
+    double currentConsumptionSCopy{0};
     auto consumptionComputer = [&currentConsumptionPCopy, &currentConsumptionQCopy, &currentConsumptionSCopy] (Consumer* consumer) {
         if (consumer->getIsConnected()) {
             currentConsumptionPCopy += consumer->getP();
@@ -120,21 +117,28 @@ void GRU::computeCurrentGRUPconsumptions() {
         }
     };
     doSmthWithMapValues<Consumer>(consumers, consumptionComputer);
+    currentConsumptionP=currentConsumptionPCopy;
+    currentConsumptionQ=currentConsumptionQCopy;
+    currentConsumptionS=currentConsumptionSCopy;
 }
 
 void GRU::computeNominalSourceP() {
-    PnomSources = 0;
-    QnomSources = 0;
-    SnomSources = 0;
+    double PnomSourcesCached {0};
+    double QnomSourcesCached {0};
+    double SnomSourcesCached {0};
+
     for (map<string, Source*>::iterator it=sources.begin(); it!=sources.end(); ++it)
     {
         if (it->second->getIsConnected())
         {
-            PnomSources += it->second->getPnominal();
-            QnomSources += it->second->getQnominal();
-            SnomSources += it->second->getSnominal();
+            SnomSourcesCached += it->second->getPnominal();
+            SnomSourcesCached += it->second->getQnominal();
+            SnomSourcesCached += it->second->getSnominal();
         }
     }
+    PnomSources = PnomSourcesCached;
+    QnomSources = QnomSourcesCached;
+    SnomSources = SnomSourcesCached;
 }
 
 bool GRU::addConsumer(const string &name, Consumer* consumer) {

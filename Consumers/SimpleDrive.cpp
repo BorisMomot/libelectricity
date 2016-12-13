@@ -15,10 +15,10 @@ SimpleDrive::SimpleDrive(unsigned int Pnominal, unsigned int RPMnom, unsigned in
 }
 
 void SimpleDrive::calculate(std::chrono::milliseconds dTime) {
-    int RPMcached = RPM;
-    int targetRPMcaches = targetRPM;
-    if (isConnected){
-        RPM = targetRPMcaches;
+    int targetRPMCached = targetRPM;
+    bool isConnectedCached = isConnected;
+    if (isConnectedCached) {
+        RPM = targetRPMCached;
         computeDrivePowers();
         calculatePowers();
         calculateCurrents();
@@ -30,9 +30,10 @@ void SimpleDrive::calculate(std::chrono::milliseconds dTime) {
 }
 
 bool SimpleDrive::setRPM(int targetRPM) {
+    int targetRPMCached = targetRPM;
     bool isConnectedCached = isConnected;
-    if (isConnectedCached){
-        SimpleDrive::targetRPM = targetRPM;
+    if (isConnectedCached) {
+        SimpleDrive::targetRPM = targetRPMCached;
         return true;
     }
     else {
@@ -41,7 +42,6 @@ bool SimpleDrive::setRPM(int targetRPM) {
 }
 
 void SimpleDrive::computeDrivePowers() {
-    int targetRPMcached = targetRPM;
-    //k - только при создании
-    P = targetRPMcached * targetRPMcached * targetRPMcached * k;
+    int targetRPMCached = targetRPM;
+    P = targetRPMCached * targetRPMCached * targetRPMCached * k;
 }

@@ -73,30 +73,28 @@ protected:
     /**
      * Напряжение и частота на шинах ГРУ
      */
-    int busU={0},busF={0};
+    std::atomic<int> busU={0},busF={0};
     /**
      * Сумма номинальных мощностей источников подключенных к шинам ГРУ
      */
-    double PnomSources={0}, QnomSources={0}, SnomSources={0};
+    std::atomic<double> PnomSources={0}, QnomSources={0}, SnomSources={0};
     /**
      * Суммарный резерв мощности для всех источников подключенных к ГРУ
      */
-    double Preserv={0},Qreserv={0},Sreserv={0};
+    std::atomic<double> Preserv={0},Qreserv={0},Sreserv={0};
     /**
      * Текущая суммарная мощность, потребляемая всеми потребителями
      */
-    double currentConsumptionP={0}, currentConsumptionQ={0}, currentConsumptionS={0};//текущая потребляемая с шин мощность
+    std::atomic<double> currentConsumptionP={0}, currentConsumptionQ={0}, currentConsumptionS={0};//текущая потребляемая с шин мощность
     /**
      * Суммарное внутреннее сопротивление всех источников подключенных к шинам
      */
-    double SumRint={0};
+    std::atomic<double> SumRint={0};
 
-
-protected:
     /**
      * количество подключенных к шинам ГРУ источников электрических энергии
      */
-    int amountOfConnectedSources={0};
+    std::atomic<int> amountOfConnectedSources={0};
     /**
      * Мапы источников, которые могут быть подключены к ГРУ
      */

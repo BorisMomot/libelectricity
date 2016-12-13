@@ -20,7 +20,7 @@ protected:
 	/**
 	 * пороговые значения при которых выключатель не включается
 	 */
-    double Uborder, Fborder;
+    std::atomic<double> Uborder{0}, Fborder{0};
 };
 
 
