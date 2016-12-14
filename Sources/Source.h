@@ -62,27 +62,27 @@ protected:
 	/**
 	 * номинальные мощности источника
 	 */
-    double Pnom, Qnom, Snom;
+	std::atomic<double> Pnom={0}, Qnom={0}, Snom={0};
 	/**
 	 * номинальное напряжение источника
 	 */
-    double Unom;
+	std::atomic<double> Unom={0};
 	/**
 	 * заданные системе управления источником эл. энергии задания по частоте и напряжению
 	 */
-    double targetU, targetF={50};
+	std::atomic<double> targetU={0}, targetF={50};
 	/**
 	 * внутреннее сопротивление источника
 	 */
-    double Rinternal;
+	std::atomic<double> Rinternal={0};
 	/**
 	 * признак, что текущая мощность больше номинальной мощности источника
 	 */
-    bool isOverLoaded = {false};
+	std::atomic<bool> isOverLoaded = {false};
 	/**
 	 * признак, что источник запущен
 	 */
-    bool isStarted;
+	std::atomic<bool> isStarted={false};
 	/**
 	 * ссылка на объект, который будет рассчитывать внутреннее сопротивление источника
 	 */

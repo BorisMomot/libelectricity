@@ -12,6 +12,7 @@
  */
 //todo написать формулу
 #include <chrono>
+#include <atomic>
 
 class RintCalculator {
 public:

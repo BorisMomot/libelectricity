@@ -25,9 +25,9 @@ public:
 	double getRPM() const { return RPM;	}
 
 protected:
-	double Vflow={0};
-	double Force={0};
-	double RPM={0};
+	std::atomic<double> Vflow={0};
+	std::atomic<double> Force={0};
+	std::atomic<double> RPM={0};
 	Propeller *propeller;
 	Drive *drive;
 };

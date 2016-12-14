@@ -28,7 +28,7 @@ protected:
 	/**
 	 * Скорость судна
 	 */
-	double Speed;
+	std::atomic<double> Speed;
 };
 
 

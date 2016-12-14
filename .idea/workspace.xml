@@ -9,12 +9,13 @@
       <config projectName="libelectricity" targetName="gmock_main" />
       <config projectName="libelectricity" targetName="gtest" />
       <config projectName="libelectricity" targetName="gtest_main" />
+      <config projectName="libelectricity" targetName="Q" />
       <config projectName="libelectricity" targetName="libShips" />
       <config projectName="libelectricity" targetName="Sources" />
       <config projectName="libelectricity" targetName="Consumers" />
       <config projectName="libelectricity" targetName="rintCalculatorTests" />
       <config projectName="libelectricity" targetName="Base" />
-      <config projectName="libelectricity" targetName="Q" />
+      <config projectName="libelectricity" targetName="libGRU" />
       <config projectName="libelectricity" targetName="qTests" />
       <config projectName="libelectricity" targetName="GRU" />
       <config projectName="libelectricity" targetName="electricity" />
@@ -28,7 +29,6 @@
       <config projectName="libelectricity" targetName="libConsumers" />
       <config projectName="libelectricity" targetName="loadDividerTests" />
       <config projectName="libelectricity" targetName="libQ" />
-      <config projectName="libelectricity" targetName="libGRU" />
       <config projectName="libelectricity" targetName="dgTests" />
       <config projectName="libelectricity" targetName="piTests" />
       <config projectName="libelectricity" targetName="libelectricity" />
@@ -42,14 +42,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f50b9aa4-c180-4a7e-b8e5-6a679913c50c" name="Default" comment="Мелкие правки по многопоточности">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/googletest" afterPath="$PROJECT_DIR$/googletest" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Consumers/SimpleDrive.cpp" afterPath="$PROJECT_DIR$/Consumers/SimpleDrive.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Consumers/SimpleDrive.h" afterPath="$PROJECT_DIR$/Consumers/SimpleDrive.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GRU/GRU.cpp" afterPath="$PROJECT_DIR$/GRU/GRU.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GRU/GRU.h" afterPath="$PROJECT_DIR$/GRU/GRU.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q/Q.h" afterPath="$PROJECT_DIR$/Q/Q.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q/Q_withDisc.h" afterPath="$PROJECT_DIR$/Q/Q_withDisc.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q/Q_withDisc.cpp" afterPath="$PROJECT_DIR$/Q/Q_withDisc.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ships/Drive.h" afterPath="$PROJECT_DIR$/Ships/Drive.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ships/Propeller.h" afterPath="$PROJECT_DIR$/Ships/Propeller.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ships/Propulsion.cpp" afterPath="$PROJECT_DIR$/Ships/Propulsion.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ships/Propulsion.h" afterPath="$PROJECT_DIR$/Ships/Propulsion.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ships/ShipOnRails.h" afterPath="$PROJECT_DIR$/Ships/ShipOnRails.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sources/RintCalculator.h" afterPath="$PROJECT_DIR$/Sources/RintCalculator.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sources/Source.cpp" afterPath="$PROJECT_DIR$/Sources/Source.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sources/Source.h" afterPath="$PROJECT_DIR$/Sources/Source.h" />
     </list>
     <ignored path="libelectricity.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,75 +71,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MultithreadWorkTest.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Stress/AbstractElModel/MultithreadWorkTest.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="e#40#72#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AbstractElModel.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Base/AbstractElModel.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1710">
-              <caret line="95" column="24" lean-forward="false" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+            <state relative-caret-position="258">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Q.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Q/Q.h">
+      <file leaf-file-name="AbstractElModel.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Base/AbstractElModel.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-              <folding>
-                <element signature="e#246#272#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Q_withDisc.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Q/Q_withDisc.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="452">
+              <caret line="113" column="22" lean-forward="false" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleDrive.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Consumers/SimpleDrive.h">
+      <file leaf-file-name="Propulsion.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ships/Propulsion.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="522">
+              <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Q_withDisc.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Q/Q_withDisc.cpp">
+      <file leaf-file-name="DG.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sources/DG.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="-873">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Q.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Q/Q.cpp">
+      <file leaf-file-name="DG.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Sources/DG.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SourceModel_Test.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Functional/SourceModel/SourceModel_Test.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -154,12 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tests/Consumer_Test.h" />
-        <option value="$PROJECT_DIR$/tests/DG_Test.h" />
-        <option value="$PROJECT_DIR$/tests/GRU_Test.h" />
-        <option value="$PROJECT_DIR$/tests/LoadDivider_Test.h" />
-        <option value="$PROJECT_DIR$/tests/PI_Test.h" />
-        <option value="$PROJECT_DIR$/tests/Q_Test.h" />
         <option value="$PROJECT_DIR$/tests/RintCalculator_Test.h" />
         <option value="$PROJECT_DIR$/tests/SimpleDrive_Test.h" />
         <option value="$PROJECT_DIR$/tests/SourceModel_Test.h" />
@@ -170,8 +152,6 @@
         <option value="$PROJECT_DIR$/Q/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Ships/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Sources/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Ships/Drive.h" />
-        <option value="$PROJECT_DIR$/Ships/Propeller.h" />
         <option value="$PROJECT_DIR$/tests/Integration/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/tests/Perfomance/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/tests/Functioanal/CMakeLists.txt" />
@@ -186,7 +166,6 @@
         <option value="$PROJECT_DIR$/tests/Functioanal/SimpleDrive/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/tests/Functioanal/SourceModel/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/tests/tests.cpp" />
-        <option value="$PROJECT_DIR$/Sources/Source.cpp" />
         <option value="$PROJECT_DIR$/Base/AbstractElModel.cpp" />
         <option value="$PROJECT_DIR$/tests/Functional/AbstractElModel/AbstractElModel_Test.cpp" />
         <option value="$PROJECT_DIR$/Base/PID.h" />
@@ -205,6 +184,15 @@
         <option value="$PROJECT_DIR$/Q/Q.h" />
         <option value="$PROJECT_DIR$/Q/Q_withDisc.h" />
         <option value="$PROJECT_DIR$/Consumers/SimpleDrive.h" />
+        <option value="$PROJECT_DIR$/Q/Q_withDisc.cpp" />
+        <option value="$PROJECT_DIR$/Ships/Drive.h" />
+        <option value="$PROJECT_DIR$/Ships/Propeller.h" />
+        <option value="$PROJECT_DIR$/Ships/Propulsion.h" />
+        <option value="$PROJECT_DIR$/Ships/Propulsion.cpp" />
+        <option value="$PROJECT_DIR$/Ships/ShipOnRails.h" />
+        <option value="$PROJECT_DIR$/Sources/Source.h" />
+        <option value="$PROJECT_DIR$/Sources/Source.cpp" />
+        <option value="$PROJECT_DIR$/Sources/RintCalculator.h" />
       </list>
     </option>
   </component>
@@ -274,7 +262,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Q" />
+              <option name="myItemId" value="Sources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -680,7 +668,8 @@
       <workItem from="1480961038027" duration="7952000" />
       <workItem from="1480970680436" duration="281000" />
       <workItem from="1481055369909" duration="1053000" />
-      <workItem from="1481658866010" duration="3171000" />
+      <workItem from="1481658866010" duration="3264000" />
+      <workItem from="1481746878887" duration="2113000" />
     </task>
     <task id="LOCAL-00001" summary="Написал тесты для распределения нагрузки и вычисления внутреннего сопротивления.">
       <created>1476912928133</created>
@@ -861,27 +850,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="test1 - 2016.12.06 at 23h 19m 58s.xml">
-      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="test1 - 2016.12.06 at 23h 20m 00s.xml">
-      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="test1 - 2016.12.06 at 23h 20m 02s.xml">
-      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="test1 - 2016.12.06 at 23h 20m 05s.xml">
-      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="test1 - 2016.12.06 at 23h 29m 42s.xml">
-      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="test1 - 2016.12.06 at 23h 32m 14s.xml">
-      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="test1 - 2016.12.13 at 22h 59m 55s.xml">
-      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="test1 - 2016.12.13 at 23h 06m 52s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
@@ -891,9 +859,30 @@
     <history-entry file="test1 - 2016.12.13 at 23h 30m 23s.xml">
       <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="test1 - 2016.12.14 at 23h 27m 49s.xml">
+      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="test1 - 2016.12.14 at 23h 46m 57s.xml">
+      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="test1 - 2016.12.14 at 23h 47m 59s.xml">
+      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="test1 - 2016.12.14 at 23h 48m 43s.xml">
+      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="test1 - 2016.12.14 at 23h 50m 07s.xml">
+      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="test1 - 2016.12.14 at 23h 51m 56s.xml">
+      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="test1 - 2016.12.14 at 23h 54m 03s.xml">
+      <configuration name="test1" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178911000" />
+    <option name="totallyTimeSpent" value="181117000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -913,7 +902,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32635984" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845187" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32740587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986959" sideWeight="0.49425286" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -970,80 +959,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="47" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/tests/Functional/SourceModel/SourceModel_Test.cpp</url>
+          <line>39</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/tests/Functional/SourceModel/SourceModel_Test.cpp</url>
+          <line>40</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="49" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/Functioanal/LoadDivider/CMakeLists.txt" />
-    <entry file="file://$PROJECT_DIR$/tests/Functioanal/RintCalculator/CMakeLists.txt" />
-    <entry file="file://$PROJECT_DIR$/tests/Functioanal/CMakeLists.txt" />
-    <entry file="file://$PROJECT_DIR$/tests/Functioanal/AbstractElModel/CMakeLists.txt" />
-    <entry file="file://$PROJECT_DIR$/tests/Functioanal/SourceModel/CMakeLists.txt" />
-    <entry file="file://$PROJECT_DIR$/tests/Functioanal/SourceModel/SourceModel_Test.cpp" />
-    <entry file="file://$PROJECT_DIR$/tests/Functional/Consumer/Consumer_Test.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sources/Source.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="62" column="14" lean-forward="false" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Functional/AbstractElModel/AbstractElModel_Test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="94" column="54" lean-forward="false" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModelRunner.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base/AbstractModel.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Functional/DG/DG_Test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base/PID.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="62" column="25" lean-forward="false" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base/PID.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base/Convinience_functions.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Base/AbstractModel.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1156,13 +1088,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/googletest/googletest/src/gtest.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="4259" column="0" lean-forward="false" selection-start-line="4259" selection-start-column="0" selection-end-line="4259" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/tests.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -1188,22 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Base/AbstractElModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="95" column="24" lean-forward="false" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Base/AbstractElModel.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="113" column="22" lean-forward="false" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Consumers/Consumer.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -1217,7 +1126,7 @@
         <state relative-caret-position="216">
           <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
           <folding>
-            <element signature="e#40#64#0" expanded="true" />
+            <element signature="e#40#64#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1226,7 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,7 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,7 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1275,8 +1181,16 @@
         <state relative-caret-position="198">
           <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
-            <element signature="e#40#61#0" expanded="true" />
+            <element signature="e#40#61#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Consumers/SimpleDrive.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1284,6 +1198,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q/Q_withDisc.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q/Q_withDisc.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1298,26 +1228,159 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q/Q_withDisc.h">
+    <entry file="file://$PROJECT_DIR$/Ships/Propeller.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        <state relative-caret-position="810">
+          <caret line="57" column="23" lean-forward="false" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+          <folding>
+            <element signature="e#245#271#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ships/Propeller.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q/Q_withDisc.cpp">
+    <entry file="file://$PROJECT_DIR$/Ships/Drive.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Consumers/SimpleDrive.h">
+    <entry file="file://$PROJECT_DIR$/Ships/Drive.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ships/Propulsion.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ships/ShipOnRails.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ships/ShipOnRails.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base/AbstractElModel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="113" column="22" lean-forward="false" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base/AbstractElModel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/googletest/googletest/src/gtest.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="2437" column="0" lean-forward="false" selection-start-line="2437" selection-start-column="0" selection-end-line="2437" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Functional/SourceModel/SourceModel_Test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sources/Source.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+          <folding>
+            <marker date="1481747363422" expanded="true" signature="387:3221" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sources/Source.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1455">
+          <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+          <folding>
+            <marker date="1481748842098" expanded="true" signature="648:816" ph="{...}" />
+            <marker date="1481748842098" expanded="true" signature="1421:1638" ph="{...}" />
+            <marker date="1481748842098" expanded="true" signature="1701:1960" ph="{...}" />
+            <marker date="1481748842098" expanded="true" signature="2206:2425" ph="{...}" />
+            <marker date="1481748842098" expanded="true" signature="2492:2753" ph="{...}" />
+            <marker date="1481748842098" expanded="true" signature="3287:3389" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sources/RintCalculator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="41" column="41" lean-forward="true" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+          <folding>
+            <element signature="e#505#522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sources/RintCalculator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ships/Propulsion.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sources/DG.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-873">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sources/DG.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

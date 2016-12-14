@@ -10,6 +10,7 @@
  * вращения
  */
 #include "AbstractModel.h"
+#include <atomic>
 class Propeller: public AbstractModel {
 public:
     Propeller(unsigned int Pnom);
@@ -34,27 +35,27 @@ protected:
     /**
      * Номинальная мощность системы
      */
-    double Pmon;
+    std::atomic<double> Pmon;
     /**
      * Момент развиваемый двигателем
      */
-    double Mdrive={0};
+    std::atomic<double> Mdrive={0};
     /**
      * Момент сопротивления винта
      */
-    double Mresistance={0};
+    std::atomic<double> Mresistance={0};
     /**
      * текущая частота вращения винта
      */
-    double RPM={0};
+    std::atomic<double> RPM={0};
     /**
      * усилие развиваемое винтом
      */
-    double F={0};
+    std::atomic<double> F={0};
     /**
      * скорость судна м/с
      */
-    double V={0};
+    std::atomic<double> V={0};
 };
 
 

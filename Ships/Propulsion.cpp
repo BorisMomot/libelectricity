@@ -12,7 +12,7 @@ void Propulsion::calculate(std::chrono::milliseconds dTime) {
 	propeller->setMdrive(drive->getM());
 	propeller->computeRPM(dTime);
 	propeller->computeForce();
-	//пока вот так.. не оптимаkьно.. зато понятно
+	//пока вот так.. не оптимально.. зато понятно
 	RPM = propeller->getRPM();
 	Force = propeller->getF();
 

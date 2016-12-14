@@ -34,9 +34,9 @@ public:
 
 protected:
     PID pi;
-    double targetRPM;
-    double RPM;
-    double M;
+    std::atomic<double> targetRPM;
+	std::atomic<double> RPM;
+	std::atomic<double> M;
 };
 
 

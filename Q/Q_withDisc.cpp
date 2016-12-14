@@ -11,7 +11,7 @@ Q_withDisc::Q_withDisc(double Uborder, double Fborder) {
 }
 
 bool Q_withDisc::connectTo(double U, double f) {
-    if (U >= Uborder && f >= Fborder){
+    if (U >= Uborder && f >= Fborder) {
         isConnected = true;
         return true;
     }
